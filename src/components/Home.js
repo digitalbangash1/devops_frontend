@@ -1,10 +1,13 @@
 import React from "react";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
 
 
 function Homepage (){
 return(
     <div>
-    <h1>Hello</h1>
+        <Navbar />
+        <Footer/>
     </div>
 )
 }
