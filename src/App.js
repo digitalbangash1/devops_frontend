@@ -3,6 +3,7 @@ import './App.css';
 import {Route, Routes} from 'react-router-dom';
 import Home from './components/Home';
 import Navbar from "./components/shared_view/Navbar";
+import Login from './components/login/Login';
 
 function App() {
   return (
