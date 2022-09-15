@@ -1,24 +1,40 @@
 import { motion } from "framer-motion";
-import { useRaf, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import Images from "./Images";
 import "./slider.css";
+
+
 function Slider() {
   console.log(Images);
+  const [width,setWidth] = useState(0);
+
+  const carousel =useRef();
+  
+useEffect(()=>{
+console.log(carousel.current.scrollWidth, carousel.current.offsetWidth);
+setWidth(carousel.current.scrollWidth -carousel.current.offsetWidth);
+},[]);
+
   return (
     <div className="Slider">
-      <motion.dev className="carousel">
-        <motion.dev className="inner-carousel">
-          {Images.map(ima => {
-            return (<motion.dev className="item">
-                    <img src={ima} alt=""/>
-                    </motion.dev>
-                    );
+      <motion.div ref={carousel} className="carousel" whileTap={{cursor:"grabbing"}}>
+
+        <motion.div
+         drag="x"
+         dragConstraints={{right:0, left:-width}}
+         className="inner-carousel"
+         >
+          {Images.map((image) => {
+            return (
+              <motion.div className="item" key={image}>
+                <img src={image} alt="" />
+              </motion.div>
+            );
           })}
-        </motion.dev>
-      </motion.dev>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
 
 export default Slider;
-
