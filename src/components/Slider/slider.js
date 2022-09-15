@@ -18,7 +18,6 @@ setWidth(carousel.current.scrollWidth -carousel.current.offsetWidth);
   return (
     <div className="Slider">
       <motion.div ref={carousel} className="carousel" whileTap={{cursor:"grabbing"}}>
-
         <motion.div
          drag="x"
          dragConstraints={{right:0, left:-width}}
