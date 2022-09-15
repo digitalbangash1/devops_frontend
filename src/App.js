@@ -13,9 +13,11 @@ function App() {
         <h1>Hello hello</h1>
      <Routes>
        <Route path="/" element={<Home/>}/>
+       <Route path="/login" element={<Login/>}/>
      </Routes>
     </div>
   );
 }
 
 export default App;
+
