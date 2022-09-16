@@ -8,14 +8,12 @@ function Videoo(){
         <div className="mainVideo" >
             <div className="overlay"></div>
         <video src={startVideo} autoPlay loop muted/>
-        <div className="content">
-<h1>Welcome</h1>
-<p> Batata Shop</p>
+
         </div>
-        </div>
-        
+
     )
-};
+
+}
 
 
 export default Videoo;
