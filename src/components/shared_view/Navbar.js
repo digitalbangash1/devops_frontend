@@ -1,19 +1,20 @@
 import React from "react";
 
 
-function Navbar(){
+function Navbar() {
     return (
 
         <nav className="navbar navbar-expand-lg py-4 navbar-light bg-light">
 
             <a className="navbar-brand px-3" href="/">Navbar</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
                     aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
 
-            <div className="collapse navbar-collapse justify-content-end"  id="navbarSupportedContent">
+            <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto px-2">
                     <li className="nav-item active">
                         <a className="nav-link" href="/">Home </a>
@@ -27,6 +28,7 @@ function Navbar(){
                             Categories
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a className="dropdown-item" href="/shoes">Shoes</a>
                             <a className="dropdown-item" href="/jeans">Jeans</a>
                             <a className="dropdown-item" href="/jackets">Jackets</a>
                             <div className="dropdown-divider"></div>
@@ -42,4 +44,5 @@ function Navbar(){
         </nav>
     )
 }
+
 export default Navbar
