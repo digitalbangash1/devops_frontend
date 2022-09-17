@@ -5,11 +5,14 @@ import "./video.css";
 function Videoo(){
     return (
         
-        <div className="mainVideo" >
-            <div className="overlay"></div>
+<div className="mainVideo" >
+    <div className="overlay"></div>
         <video src={startVideo} autoPlay loop muted/>
-
-        </div>
+            <div className="content">
+                <h1>Welcome</h1>
+                <p>Btata shop</p>
+            </div>
+</div>
 
     )
 
