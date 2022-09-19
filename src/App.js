@@ -5,6 +5,7 @@ import Home from './components/Home/Home'
 import Navbar from "./components/shared_view/Navbar";
 import Shoes from './components/products/shoes/Shoes'
 
+
 function App() {
   return (
     <div className="App">
