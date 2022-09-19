@@ -69,7 +69,7 @@ function Login() {
           {renderErrorMessage("pass")}
         </div>
         <div className="button-container">
-          <input type="submit" />
+          <input type="submit" value="login" />
         </div>
       </form>
     </div>
