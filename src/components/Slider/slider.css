@@ -14,6 +14,7 @@
 
 .inner-carousel{
     display: flex;
+    background-color: rgba(169, 217, 236, 0.336);
     
 }
 
@@ -21,7 +22,7 @@
 .carousel {
     cursor: grab;
     overflow: hidden;
-    margin: 0 2%;
-    
-
+    margin: 0 1%;
+    background-color: rgba(247, 163, 36, 0.11);
+    border-radius: 2rem;
     }
