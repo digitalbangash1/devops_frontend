@@ -1,10 +1,10 @@
 import React from 'react';
-import './Shoes.css';
+import './Jeans.css';
 
 
 
 
-function ShoesProduct() {
+function JeansProduct() {
     return (
 
 
@@ -168,7 +168,7 @@ function ShoesProduct() {
         </section>
 
 
-)
+    )
 }
 
-export default ShoesProduct
+export default JeansProduct
