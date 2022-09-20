@@ -5,6 +5,7 @@ import Home from './components/Home/Home'
 import Navbar from "./components/shared_view/Navbar";
 import Shoes from './components/products/shoes/Shoes'
 import Admin from './Pages/Admin/Admin';
+import Footer from "./components/shared_view/Footer";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
          <Route path="/shoes" element={<Shoes/>}/>
           <Route path="/admin" element={<Admin/>}/>
      </Routes>
+     <Footer/>
     </div>
   );
 }
