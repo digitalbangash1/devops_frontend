@@ -37,6 +37,9 @@ function Navbar(){
                     <li className="nav-item">
                         <a className="nav-link disabled" href="#">Disabled</a>
                     </li>
+                    <li className="nav-login">
+                        <a className="nav-link" href="/link">login</a>
+                    </li>
                 </ul>
 
             </div>
