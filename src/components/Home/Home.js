@@ -8,7 +8,6 @@ function Homepage (){
 return(
     <div>
     <Slider/>
-    <Feedback/>
     </div>
 )
 }
