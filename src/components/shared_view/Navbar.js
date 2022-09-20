@@ -42,7 +42,7 @@ function Navbar(){
                         <a className="nav-link disabled" href="#">Disabled</a>
                     </li>
                     <li className="nav-login">
-                        <a className="nav-link" href="/link">login</a>
+                        <a className="nav-link" href="/login">login</a>
                     </li>
                 </ul>
 

@@ -3,10 +3,11 @@ import './App.css';
 import {Route, Routes} from 'react-router-dom';
 import Home from './components/Home/Home'
 import Navbar from "./components/shared_view/Navbar";
-import Shoes from './components/products/shoes/Shoes'
+
 import Admin from './Pages/Admin/Admin';
-import JeansProduct from "./components/products/jeans/jeans";
 import Footer from "./components/shared_view/Footer";
+import Shoes from './components/products/shoes/Shoes';
+import Jeans from "./components/products/jeans/jeans";
 
 import Feedback from "./components/Feedback/Feedback";
 
@@ -17,8 +18,11 @@ function App() {
      <Routes>
        <Route path="/" element={<Home/>}/>
          <Route path="/shoes" element={<Shoes/>}/>
+         <Route path="/jeans" element={<Jeans/>}/>
+
+
           <Route path="/admin" element={<Admin/>}/>
-         <Route path="/jeans" element={<JeansProduct/>}/>
+
        <Route path="/Feedback" element={<Feedback/>}/>
      </Routes>
      <Footer/>
