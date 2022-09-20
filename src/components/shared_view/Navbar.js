@@ -18,9 +18,13 @@ function Navbar(){
                 <ul className="navbar-nav mr-auto px-2">
                     <li className="nav-item active">
                         <a className="nav-link" href="/">Home </a>
+                        <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="/link">Link</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/Feedback">Feedback</a>
                     </li>
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"

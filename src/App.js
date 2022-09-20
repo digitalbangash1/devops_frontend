@@ -8,6 +8,7 @@ import Admin from './Pages/Admin/Admin';
 import JeansProduct from "./components/products/jeans/jeans";
 import Footer from "./components/shared_view/Footer";
 
+import Feedback from "./components/Feedback/Feedback";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
          <Route path="/shoes" element={<Shoes/>}/>
           <Route path="/admin" element={<Admin/>}/>
          <Route path="/jeans" element={<JeansProduct/>}/>
+       <Route path="/Feedback" element={<Feedback/>}/>
      </Routes>
      <Footer/>
     </div>
