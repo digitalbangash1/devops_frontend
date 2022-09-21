@@ -7,7 +7,9 @@ import Login from './components/login/Login';
 import Shoes from './components/products/shoes/Shoes'
 import Admin from './Pages/Admin/Admin';
 import Footer from "./components/shared_view/Footer";
-import Jeans from "./components/products/jeans/jeans";
+import Shoes from './components/products/shoes/Shoes';
+import Jeans from "./components/products/jeans/Jeans";
+
 import Feedback from "./components/Feedback/Feedback";
 
 function App() {
