@@ -1,7 +1,9 @@
 import React from "react";
+import Feedback  from "../Feedback/Feedback.js";
 import Slider from "../Slider/slider";
 import Videoo from "./video";
-import Footer from "../shared_view/Footer";
+
+
 
 
 
@@ -12,7 +14,6 @@ return(
     <div>
             <Videoo/>
             <Slider/>
-            <Footer/>
     </div>
 )
 }

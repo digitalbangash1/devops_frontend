@@ -1,11 +1,10 @@
 import React from 'react';
-import '../shoes/Shoes.css';
+import './Jeans.css';
 
 
 
 
-function ShoesProduct() {
-    console.log("Ali shahata");
+function JeansProduct() {
     return (
 
 
@@ -22,7 +21,7 @@ function ShoesProduct() {
                 <div className="row">
 
                     <div className="col-md-6 col-lg-4 col-xl-3">
-                        <div id="products-1" className="single-product">
+                        <div id="product-1" className="single-product">
                             <div className="part-1">
                                 <ul>
                                     <li><a href="src/components/products/shoes/Shoes#"><i className="fas fa-shopping-cart"></i></a></li>
@@ -32,7 +31,7 @@ function ShoesProduct() {
                                 </ul>
                             </div>
                             <div className="part-2">
-                                <h3 className="product-title">there Product Title</h3>
+                                <h3 className="product-title">Here Product Title</h3>
                                 <h4 className="product-old-price">$79.99</h4>
                                 <h4 className="product-price">$49.99</h4>
                             </div>
@@ -40,7 +39,7 @@ function ShoesProduct() {
                     </div>
 
                     <div className="col-md-6 col-lg-4 col-xl-3">
-                        <div id="products-2" className="single-product">
+                        <div id="product-2" className="single-product">
                             <div className="part-1">
                                 <span className="discount">15% off</span>
                                 <ul>
@@ -51,14 +50,14 @@ function ShoesProduct() {
                                 </ul>
                             </div>
                             <div className="part-2">
-                                <h3 className="product-title">there Product Title</h3>
+                                <h3 className="product-title">Here Product Title</h3>
                                 <h4 className="product-price">$49.99</h4>
                             </div>
                         </div>
                     </div>
 
                     <div className="col-md-6 col-lg-4 col-xl-3">
-                        <div id="products-3" className="single-product">
+                        <div id="product-3" className="single-product">
                             <div className="part-1">
                                 <ul>
                                     <li><a href="src/components/products/shoes/Shoes#"><i className="fas fa-shopping-cart"></i></a></li>
@@ -68,7 +67,7 @@ function ShoesProduct() {
                                 </ul>
                             </div>
                             <div className="part-2">
-                                <h3 className="product-title">there Product Title</h3>
+                                <h3 className="product-title">Here Product Title</h3>
                                 <h4 className="product-old-price">$79.99</h4>
                                 <h4 className="product-price">$49.99</h4>
                             </div>
@@ -76,7 +75,7 @@ function ShoesProduct() {
                     </div>
 
                     <div className="col-md-6 col-lg-4 col-xl-3">
-                        <div id="products-4" className="single-product">
+                        <div id="product-4" className="single-product">
                             <div className="part-1">
                                 <span className="new">new</span>
                                 <ul>
@@ -87,14 +86,14 @@ function ShoesProduct() {
                                 </ul>
                             </div>
                             <div className="part-2">
-                                <h3 className="product-title">there Product Title</h3>
+                                <h3 className="product-title">Here Product Title</h3>
                                 <h4 className="product-price">$49.99</h4>
                             </div>
                         </div>
                     </div>
 
                     <div className="col-md-6 col-lg-4 col-xl-3">
-                        <div id="products-1" className="single-product">
+                        <div id="product-1" className="single-product">
                             <div className="part-1">
                                 <ul>
                                     <li><a href="src/components/products/shoes/Shoes#"><i className="fas fa-shopping-cart"></i></a></li>
@@ -112,7 +111,7 @@ function ShoesProduct() {
                     </div>
 
                     <div className="col-md-6 col-lg-4 col-xl-3">
-                        <div id="products-2" className="single-product">
+                        <div id="product-2" className="single-product">
                             <div className="part-1">
                                 <span className="discount">15% off</span>
                                 <ul>
@@ -123,14 +122,14 @@ function ShoesProduct() {
                                 </ul>
                             </div>
                             <div className="part-2">
-                                <h3 className="product-title">there Product Title</h3>
+                                <h3 className="product-title">Here Product Title</h3>
                                 <h4 className="product-price">$49.99</h4>
                             </div>
                         </div>
                     </div>
 
                     <div className="col-md-6 col-lg-4 col-xl-3">
-                        <div id="products-3" className="single-product">
+                        <div id="product-3" className="single-product">
                             <div className="part-1">
                                 <ul>
                                     <li><a href="src/components/products/shoes/Shoes#"><i className="fas fa-shopping-cart"></i></a></li>
@@ -140,7 +139,7 @@ function ShoesProduct() {
                                 </ul>
                             </div>
                             <div className="part-2">
-                                <h3 className="product-title">there Product Title</h3>
+                                <h3 className="product-title">Here Product Title</h3>
                                 <h4 className="product-old-price">$79.99</h4>
                                 <h4 className="product-price">$49.99</h4>
                             </div>
@@ -148,7 +147,7 @@ function ShoesProduct() {
                     </div>
 
                     <div className="col-md-6 col-lg-4 col-xl-3">
-                        <div id="products-4" className="single-product">
+                        <div id="product-4" className="single-product">
                             <div className="part-1">
                                 <span className="new">new</span>
                                 <ul>
@@ -159,7 +158,7 @@ function ShoesProduct() {
                                 </ul>
                             </div>
                             <div className="part-2">
-                                <h3 className="product-title">there Product Title</h3>
+                                <h3 className="product-title">Here Product Title</h3>
                                 <h4 className="product-price">$49.99</h4>
                             </div>
                         </div>
@@ -169,7 +168,7 @@ function ShoesProduct() {
         </section>
 
 
-)
+    )
 }
 
-export default ShoesProduct
+export default JeansProduct

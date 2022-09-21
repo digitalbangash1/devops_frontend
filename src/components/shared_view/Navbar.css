@@ -6,3 +6,6 @@
     background-color: #a90e23;
     color: #d44444;
 }
+.dropdown:hover .dropdown-menu {
+    display: block;
+}

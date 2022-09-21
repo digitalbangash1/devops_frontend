@@ -58,24 +58,24 @@ a:hover {
     transform: scale(1.2,1.2) rotate(5deg);
 }
 
-.section-products #products-1 .part-1::before {
-    background: url("https://i.ibb.co/L8Nrb7p/1.jpg") no-repeat center;
+.section-products #product-1 .part-1::before {
+    background: url("https://user-images.githubusercontent.com/71657588/191205994-27037220-3a3e-44dc-8bde-edaa23ca6f85.png") no-repeat center;
     background-size: cover;
     transition: all 0.3s;
 }
 
-.section-products #products-2 .part-1::before {
-    background: url("https://i.ibb.co/cLnZjnS/2.jpg") no-repeat center;
+.section-products #product-2 .part-1::before {
+    background: url("https://user-images.githubusercontent.com/71657588/191211820-325c1bb5-96be-447d-9d39-06ec2d68db31.png") no-repeat center;
     background-size: cover;
 }
 
-.section-products #products-3 .part-1::before {
-    background: url("https://i.ibb.co/L8Nrb7p/1.jpg") no-repeat center;
+.section-products #product-3 .part-1::before {
+    background: url("https://user-images.githubusercontent.com/71657588/191212438-fa5b8d0f-0cfb-464f-b229-287c27d662d1.png") no-repeat center;
     background-size: cover;
 }
 
-.section-products #products-4 .part-1::before {
-    background: url("https://i.ibb.co/cLnZjnS/2.jpg") no-repeat center;
+.section-products #product-4 .part-1::before {
+    background: url("https://user-images.githubusercontent.com/71657588/191212963-3d6b21cc-a714-4069-9dee-e9cbbd7c464f.png") no-repeat center;
     background-size: cover;
 }
 
