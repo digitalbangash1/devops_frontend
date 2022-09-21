@@ -1,5 +1,4 @@
 import React from "react";
-import Feedback  from "../Feedback/Feedback.js";
 import Slider from "../Slider/slider";
 import Videoo from "./video";
 

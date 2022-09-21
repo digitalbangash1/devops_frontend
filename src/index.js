@@ -7,13 +7,12 @@ import { BrowserRouter} from 'react-router-dom';
 import './index.css';
 import './components/login/Login.css';
 import App from './App';
-import Login from './components/login/Login';
+
 
 
 ReactDOM.render(
     <BrowserRouter>
         <App />
-        <Login />
     </BrowserRouter>,
     document.getElementById('root')
 );
