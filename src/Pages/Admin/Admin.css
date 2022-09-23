@@ -1,0 +1,24 @@
+.Dashboard{
+    background: linear-gradient(
+        100deg,
+        rgba(2,0,36,1) 0%,
+        rgba(9,9,121,1) 0%,
+        rgba(0,212,255,1) 90%
+    );
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.DashboardGlass{
+    display: grid;
+    height: 97%;
+    width: 97%; 
+    border-radius: 2rem;
+    background-color: var(--glass);
+    overflow: hidden;
+    grid-template-columns: 11rem auto 20rem;
+}
