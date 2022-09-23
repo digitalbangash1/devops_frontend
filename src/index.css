@@ -15,9 +15,8 @@ code {
 .footer{
   margin-top: 1rem;
   padding: 1rem;
-  background-color: rgb(#e2ebeb);
   text-align: center;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
