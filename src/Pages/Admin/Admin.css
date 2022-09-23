@@ -1,9 +1,9 @@
 .Dashboard{
     background: linear-gradient(
-        100deg,
-        rgba(2,0,36,1) 0%,
-        rgba(9,9,121,1) 0%,
-        rgba(0,212,255,1) 90%
+        106deg,
+        #ffe1bc 29.63%,
+        #ffcfd1 51.55%,
+        #f3c6f1 90.85%
     );
 
     height: 100vh;
