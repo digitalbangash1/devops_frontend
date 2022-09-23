@@ -14,7 +14,7 @@ import Feedback from "./components/Feedback/Feedback";
 function App() {
   return (
     <div className="App">
-    <Navbar/>
+
      <Routes>
          <Route exact path="/" element={<Home/>}/>
          <Route path="/login" element={<Login/>}/>
@@ -24,7 +24,7 @@ function App() {
          <Route path="/Feedback" element={<Feedback/>}/>
          <Route path="*" element={<h1>404 Not Found</h1>}/>
      </Routes>
-     <Footer/>
+
     </div>
   );
 }
