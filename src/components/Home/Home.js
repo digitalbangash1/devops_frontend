@@ -13,10 +13,8 @@ function Homepage (){
 
 return(
     <div>
-            <Navbar />
             <Videoo/>
             <Slider/>
-            <Footer />
     </div>
 )
 }

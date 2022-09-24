@@ -1,4 +1,5 @@
 import React from "react";
+import './Footer.css'
 
 /**
  * Update the year in the footer
