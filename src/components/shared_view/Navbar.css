@@ -3,9 +3,29 @@
     font-size: 1.1em;
 }
 .navbar .navbar-nav .nav-link:hover {
-    background-color: #a90e23;
-    color: #d44444;
+    background-color: #463be2;
+    color: #ffffff;
+    border-radius: 2rem;
 }
 .dropdown:hover .dropdown-menu {
     display: block;
+}
+
+.cart {
+    cursor : pointer;
+    
+}
+
+.cart span:nth-child(1) {
+ font-size : 2rem ;
+ color : rgb(0, 0, 0) ;
+}
+.cart span:nth-child(2) {
+ padding:3px ;
+ background-color : #463be2 ;
+ color : rgb(255, 255, 255) ;
+ font-weight : bolx ;
+ border-radius : 40% ;
+ position : relative ;
+ top : -15px ;
 }
