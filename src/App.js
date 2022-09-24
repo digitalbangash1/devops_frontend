@@ -10,16 +10,16 @@ import Footer from "./components/shared_view/Footer";
 import Jeans from "./components/products/jeans/jeans";
 import Feedback from "./components/Feedback/Feedback";
 import JdShose from "./components/Shopping-Cart/JdShoes";
-import Cart from "./components/Shopping-Cart/cart" 
+import Cart from "./components/Shopping-Cart/cart"
 import Shopping from "./components/Shopping-Cart/shopping";
 import JdShoes from './components/Shopping-Cart/JdShoes';
-import { useState , useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 
 
 
 function App() {
-// shopping cart relevant
+  // shopping cart relevant
   const [show, setShow] = useState(true);
   const [cart, setCart] = useState([]);
 
@@ -37,32 +37,29 @@ function App() {
     setCart([...arr]);
   };
 
-   useEffect(() => {
-     console.log("cart change");
+  useEffect(() => {
+    console.log("cart change");
   }, [cart]);
-// shopping cart relevant
+  // shopping cart relevant
 
 
   return (
     <div className="App">
-      <Navbar setShow={setShow} size={cart.length} />
-      {show ? (
-        <JdShoes handleClick={handleClick} />
-      ) : (
-        <Cart cart={cart} setCart={setCart} handleChange={handleChange}  handleClick={handleClick} />
-      )}
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/shoes" element={<Shoes />} />
-        <Route path="/jeans" element={<Jeans />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/Feedback" element={<Feedback />} />
-        <Route path="/JdShose" element={<JdShose />} />
-        <Route path="/shoppingCart" element={<Cart />} />
 
-        <Route path="*" element={<h1>404 Not Found</h1>} />
-      </Routes>
+      <Navbar setShow={setShow} size={cart.length} />
+      <Routes >
+      <Route exact path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/shoes" element={<Shoes />} />
+      <Route path="/jeans" element={<Jeans />} />
+      <Route path="/admin" element={<Admin />} />
+      <Route path="/Feedback" element={<Feedback />} />
+      <Route path="/JdShose" element={<JdShose handleClick={handleClick}/>} />
+      <Route path="/shoppingCart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange}/>} />
+
+      <Route path="*" element={<h1>404 Not Found</h1>} />
+    </Routes >
+    
       <Footer />
     </div>
   );
