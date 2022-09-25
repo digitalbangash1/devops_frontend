@@ -37,7 +37,7 @@ const  Navbar = ({ setShow, size }) =>{
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a className="dropdown-item" href="/shoes">Shoes</a>
-                            <a className="dropdown-item" href="/JdShose">Jd Shose </a>
+                            <a className="dropdown-item" href="/JdShose">Jd Shoes </a>
                             <a className="dropdown-item" href="/jeans">Jeans</a>
 
                             <div className="dropdown-divider"></div>
