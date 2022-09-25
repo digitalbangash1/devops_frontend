@@ -11,7 +11,7 @@ const  Navbar = ({ setShow, size }) =>{
 
         <nav className="navbar navbar-expand-lg py-4 navbar-light bg-light">
 
-            <img className="navbar-brand px-3" href="" alt="SAMAT" src="samat4.png"></img>
+            <img className="navbar-brand px-3" href="" alt="SAMAT" src={img}></img>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
