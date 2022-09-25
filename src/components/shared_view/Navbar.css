@@ -29,3 +29,12 @@
  position : relative ;
  top : -15px ;
 }
+.navbar-brand {
+    position: relative;
+    background: url(../Imgs/samat4.png);
+    width: 170px;
+    height: 170px;
+    left: 12px;
+    background-size: contain;
+
+}

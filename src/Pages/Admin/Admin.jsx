@@ -1,8 +1,8 @@
 import './Admin.css';
 import React from 'react';
-import Sidebar from '../../components/Sidebar/Sidebar';
-import MainDash from '../../components/MainDash/MainDash';
-import RightSide from '../../components/RightSide/Rightside';
+import Sidebar from '../../components/Admin/Sidebar/Sidebar';
+import MainDash from '../../components/Admin/MainDash/MainDash';
+import RightSide from '../../components/Admin/RightSide/Rightside';
 
 function Admin (){
     return(

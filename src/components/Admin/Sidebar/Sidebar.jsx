@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Logo from '../Imgs/Logo.png'
+import Logo from '../../Imgs/Logo.png'
 import './Sidebar.css'
 
 import { SidebarData } from '../Data/Data';

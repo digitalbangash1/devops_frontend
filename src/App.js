@@ -5,7 +5,7 @@ import Home from './components/Home/Home'
 import Login from './components/login/Login';
 import Shoes from './components/products/shoes/Shoes'
 import Admin from './Pages/Admin/Admin';
-import Jeans from "./components/products/jeans/jeans";
+import Jeans from "./components/products/jeans/jeans.js";
 import Feedback from "./components/Feedback/Feedback";
 import Navbar from './components/shared_view/Navbar';
 import Footer from './components/shared_view/Footer';

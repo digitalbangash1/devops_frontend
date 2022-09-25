@@ -1,5 +1,9 @@
 import React from "react";
-import img from "../Imgs/Batata-logo.png";
+<<<<<<< HEAD
+import img from "../Imgs/samat4.png";
+=======
+import user from '../Imgs/user.png';
+>>>>>>> 1712dc3 (Folder update)
 import './Navbar.css';
 import { useState } from "react";
 
@@ -11,7 +15,7 @@ const  Navbar = ({ setShow, size }) =>{
 
         <nav className="navbar navbar-expand-lg py-4 navbar-light bg-light">
 
-            <a className="navbar-brand px-3" href="/">Navbar</a>
+            <img className="navbar-brand px-3" href="" alt="SAMAT" src={img}></img>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
