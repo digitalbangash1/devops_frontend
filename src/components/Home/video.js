@@ -10,7 +10,7 @@ function Videoo(){
         <video src={startVideo} autoPlay loop muted/>
             <div className="content">
                 <h1>Welcome</h1>
-                <p>Batata shop</p>
+                <p>SAMAT store</p>
             </div>
 </div>
 

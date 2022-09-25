@@ -38,7 +38,7 @@ function Footer() {
             <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>
                 <MDBIcon icon="gem" className="me-3" />
-                Batata Webshop
+                SAMAT store
               </h6>
               <p>
                 Your favorit e-commerce website for buying your wardrobe, we got everything you need in order for you to look your best.
@@ -92,7 +92,7 @@ function Footer() {
               </p>
               <p>
                 <MDBIcon icon="envelope" className="me-3" />
-                info@batata-webshop.com
+                info@samat-webshop.com
               </p>
               <p>
                 <MDBIcon icon="phone" className="me-3" /> + 45 234 567 88
@@ -107,8 +107,8 @@ function Footer() {
 
       <div className='text-center p-4 fw-normal' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
         © {today.getFullYear()} Copyright: 
-        <a className='text-reset fw-bold' href='https://batata-webshop.com/'>
-        Batata-Webshop.com
+        <a className='text-reset fw-bold' href='https://samat-webshop.com/'>
+        Samat-Webshop.com
         </a>
       </div>
     </MDBFooter>
