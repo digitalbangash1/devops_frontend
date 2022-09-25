@@ -1,4 +1,5 @@
 import React from "react";
+import img from "../Imgs/Batata-logo.png";
 import './Navbar.css';
 import { useState } from "react";
 
