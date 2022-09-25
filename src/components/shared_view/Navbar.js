@@ -1,5 +1,9 @@
 import React from "react";
+<<<<<<< HEAD
 import img from "../Imgs/samat4.png";
+=======
+import user from '../Imgs/user.png';
+>>>>>>> 1712dc3 (Folder update)
 import './Navbar.css';
 import { useState } from "react";
 
