@@ -36,7 +36,7 @@ jobs:
       - name: Deploy app
         env: 
           APP_NAME: 'samat'
-          APP_URL: 'https://captain.admin.samat.diplomportal.dk/'
+          APP_URL: 'https://samat.admin.samat.diplomportal.dk/'
           IMAGE_NAME: 'salim963/devops:${{github.run_number}}'
         run: 
          'caprover deploy --caproverUrl=$APP_URL --caproverPassword=${{ secrets.CAPROVER_PASSWORD }} --imageName=$IMAGE_NAME --appName=$APP_NAME'
