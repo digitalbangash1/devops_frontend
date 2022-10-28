@@ -11,7 +11,6 @@ import Navbar from './components/shared_view/Navbar';
 import Footer from './components/shared_view/Footer';
 import JdShose from "./components/Shopping-Cart/JdShoes";
 import Cart from "./components/Shopping-Cart/cart"
-import Shopping from "./components/Shopping-Cart/shopping";
 import JdShoes from './components/Shopping-Cart/JdShoes';
 import { useState, useEffect } from 'react';
 
@@ -20,33 +19,82 @@ import { useState, useEffect } from 'react';
 
 function App() {
   // shopping cart relevant
-  const [show, setShow] = useState(true);
   const [cart, setCart] = useState([]);
+  const [warning, setwarning] = useState(false);
+  const [add, setadd] = useState(false);
 
+  // click at the product and check if is alrady addet to cart
   const handleClick = (item) => {
-    if (cart.indexOf(item) !== -1) return;
+    let isPresent =false;
+    cart.forEach((product)=>{
+      if (item.id === product.id)
+        isPresent = true
+    })
+    if (isPresent) {
+      setwarning(true);
+      setTimeout(() => {
+        setwarning(false)
+      }, 2000);
+      return;
+    }
+    else 
+    setadd(true);
+      setTimeout(() => {
+        setadd(false)
+      }, 2000);
+    
+    
+
+// set the new product 
     setCart([...cart, item]);
+    console.log(item)
   };
+// get our item into localstorage 
+  useEffect(() => {
+    setCart(JSON.parse(localStorage.getItem("cart")));
+  }, []);
+
 
   const handleChange = (item, d) => {
-    const ind = cart.indexOf(item);
+    console.log(item)
+    let ind =-1
+    cart.forEach((data, index)=>{
+      if(data.id === item.id)
+    ind = index
+    });
     const arr = cart;
-    arr[ind].amount += d;
-
-    if (arr[ind].amount === 0) arr[ind].amount = 1;
-    setCart([...arr]);
+    arr[ind] += d;
+    if (arr[ind] === 0) {arr[ind].amount = 1;
+    setCart([...arr]);}
   };
 
+
+// set items in localstorage 
   useEffect(() => {
-    console.log("cart change");
+    if (cart){
+      console.log("this is array using cart",cart);
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
   }, [cart]);
+
+
   // shopping cart relevant
+
+
+
 
 
   return (
     <div className="App">
 
-      <Navbar setShow={setShow} size={cart.length} />
+      <Navbar  size={cart.length} />
+      {
+          warning && <div className='warning'> Item is already addet to your cart </div>
+      }
+      {
+          add && <div className='add'> You add an item to your cart </div>
+      }
+
       <Routes >
       <Route exact path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
@@ -55,11 +103,10 @@ function App() {
       <Route path="/admin" element={<Admin />} />
       <Route path="/Feedback" element={<Feedback />} />
       <Route path="/JdShose" element={<JdShose handleClick={handleClick}/>} />
-      <Route path="/shoppingCart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange}/>} />
+      <Route path="/shoppingCart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange}  size={cart.length}/> } />
 
       <Route path="*" element={<h1>404 Not Found</h1>} />
     </Routes >
-    
       <Footer />
     </div>
   );

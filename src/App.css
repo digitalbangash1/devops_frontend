@@ -50,3 +50,35 @@
     transform: rotate(360deg);
   }
 }
+
+.warning{
+  height: 80px;
+  width: 170px;
+  position: fixed;
+  right: 0;
+  
+  background-color: rgb(198, 40, 40);
+  font-size: 1.1rem;
+  color: white;
+  font-family: cursive;
+  text-align: center;
+  padding: 5px;
+  border-radius: 50px;
+  margin-right: 2%;
+}
+
+.add{
+  height: 75px;
+  width: 180px;
+  position: fixed;
+  right: 0;
+  background-color: rgb(22, 226, 8);
+  font-size: 1.1rem;
+  color: white;
+  font-family: cursive;
+  text-align: center;
+  padding: 5px;
+  border-radius: 50px;
+  margin-right: 2%;
+
+}

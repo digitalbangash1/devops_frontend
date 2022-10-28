@@ -1,17 +1,24 @@
 import React, { useState, useEffect } from "react";
 import "./cart.css";
+/*
+function saveItems() {
+    var cart = JSON.parse(localStorage.getItem('cart'));   
+    console.log("this is shopping cart", cart);
+}
+*/
 
 
 const Cart = ({ cart, setCart, handleChange }) => {
     const [price, setPrice] = useState(0);
-
-
-
+    
+  
     const handleRemove = (id) => {
         const arr = cart.filter((item) => item.id !== id);
         setCart(arr);
         handlePrice();
+
     };
+    
 
     const handlePrice = () => {
         let ans = 0;
@@ -21,6 +28,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
 
     useEffect(() => {
         handlePrice();
+
     });
 
     return (
@@ -32,7 +40,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
                         <p>{item.title}</p>
                     </div>
                     <div>
-                        <button onClick={() => handleChange(item, 1)}>+</button>
+                        <button onClick={() => handleChange(item , +1)}>+</button>
                         <button>{item.amount}</button>
                         <button onClick={() => handleChange(item, -1)}>-</button>
                     </div>

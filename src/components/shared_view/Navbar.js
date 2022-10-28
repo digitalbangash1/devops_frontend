@@ -4,11 +4,12 @@ import { useState } from "react";
 
 
 const  Navbar = ({ setShow, size }) =>{
+
     
     return (
         
 
-        <nav className="navbar navbar-expand-lg py-4 navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg py-4 navbar-light bg-light ">
 
             <a className="navbar-brand px-3" href="" alt="SAMAT" >SAMAT</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -36,7 +37,7 @@ const  Navbar = ({ setShow, size }) =>{
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a className="dropdown-item" href="/shoes">Shoes</a>
-                            <a className="dropdown-item" href="/JdShose">Jd Shoes </a>
+                            <a className="dropdown-item" href="/JdShose" >Jd Shoes </a>
                             <a className="dropdown-item" href="/jeans">Jeans</a>
 
                             <div className="dropdown-divider"></div>
@@ -51,8 +52,8 @@ const  Navbar = ({ setShow, size }) =>{
                     </li>
 
                     <li className ="cart nav-link" >
-                        <span onClick={() => setShow(false)}>
-                            <a class = " fas fa-cart-plus"  href="/shoppingCart" > </a>
+                        <span onClick={() => setShow(true)}>
+                            <a class = " fas fa-cart-plus"  href="/shoppingCart"  > </a>
                         </span>
                         <span>{size}</span>
                     </li>
