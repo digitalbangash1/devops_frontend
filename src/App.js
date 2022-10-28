@@ -64,6 +64,7 @@ function App() {
     </div>
   );
 }
+console.log("App.js");
 
 
 
