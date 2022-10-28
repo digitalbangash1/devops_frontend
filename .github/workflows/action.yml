@@ -35,7 +35,7 @@ jobs:
       # Trigger deploy on Caprover instance
       - name: Deploy app
         env: 
-          APP_NAME: 'devopse22'
+          APP_NAME: 'samat'
           APP_URL: 'https://captain.admin.samat.diplomportal.dk/'
           IMAGE_NAME: 'salim963/devops:${{github.run_number}}'
         run: 
