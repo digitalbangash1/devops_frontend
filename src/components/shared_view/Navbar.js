@@ -1,11 +1,9 @@
 import React from "react";
 import './Navbar.css';
-import { useState } from "react";
 
 
 const  Navbar = ({ setShow, size }) =>{
 
-    
     return (
         
 

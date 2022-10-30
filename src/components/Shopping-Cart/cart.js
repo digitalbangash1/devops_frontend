@@ -54,6 +54,9 @@ const Cart = ({ cart, setCart, handleChange }) => {
                 <span>Total Price of your Items</span>
                 <span>DKK - {price}</span>
             </div>
+            <div>
+            <button class="button-87" role="button">Checkout</button>
+            </div>
         </article>
     );
 };

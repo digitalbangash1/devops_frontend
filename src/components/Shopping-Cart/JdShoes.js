@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import Thelist from "./data";
 import Cards from "./Cards";
 

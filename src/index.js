@@ -2,18 +2,17 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 // Put any other imports below so that CSS from your
 // components takes precedence over default styles.
-import ReactDOM from 'react-dom';
 import { BrowserRouter} from 'react-router-dom';
 import './index.css';
 import App from './App';
+import { createRoot } from 'react-dom/client';
 
 
 
-ReactDOM.render(
+createRoot(document.getElementById('root')).render(
     <BrowserRouter>
         <App />
     </BrowserRouter>,
-    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
