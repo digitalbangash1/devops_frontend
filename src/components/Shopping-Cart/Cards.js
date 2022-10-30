@@ -2,7 +2,7 @@ import React from "react";
 import "./JdShoes.css";
 
 
-const Cards = ({ item , handleClick}) => {
+const Cards = ({ item, handleClick }) => {
 
     const { title, author, price, img } = item;
     return (

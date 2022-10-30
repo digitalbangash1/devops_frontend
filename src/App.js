@@ -19,14 +19,15 @@ import { useState, useEffect } from 'react';
 
 function App() {
   // shopping cart relevant
+
   const [cart, setCart] = useState([]);
   const [warning, setwarning] = useState(false);
   const [add, setadd] = useState(false);
 
   // click at the product and check if is alrady addet to cart
   const handleClick = (item) => {
-    let isPresent =false;
-    cart.forEach((product)=>{
+    let isPresent = false;
+    cart.forEach((product) => {
       if (item.id === product.id)
         isPresent = true
     })
@@ -37,19 +38,17 @@ function App() {
       }, 2000);
       return;
     }
-    else 
-    setadd(true);
-      setTimeout(() => {
-        setadd(false)
-      }, 2000);
-    
-    
+    else
+      setadd(true);
+    setTimeout(() => {
+      setadd(false)
+    }, 2000);
 
-// set the new product 
+    // set the new product 
     setCart([...cart, item]);
     console.log(item)
   };
-// get our item into sessionStorage 
+  // get our item into sessionStorage 
   useEffect(() => {
     setCart(JSON.parse(sessionStorage.getItem("cart")));
   }, []);
@@ -57,56 +56,53 @@ function App() {
 
   const handleChange = (item, d) => {
     console.log(item)
-    let ind =-1
-    cart.forEach((data, index)=>{
-      if(data.id === item.id)
-    ind = index
+    let ind = -1
+    cart.forEach((data, index) => {
+      if (data.id === item.id)
+        ind = index
     });
     const arr = cart;
     arr[ind] += d;
-    if (arr[ind] === 0) {arr[ind].amount = 1;
-    setCart([...arr]);}
+    if (arr[ind] === 0) {
+      arr[ind].amount = 1;
+      setCart([...arr]);
+    }
   };
 
-
-// set items in sessionStorage 
+  // set items in sessionStorage 
   useEffect(() => {
-    if (cart){
-      console.log("this is array using cart",cart);
+    if (cart) {
+      console.log("this is array using cart", cart);
       sessionStorage.setItem('cart', JSON.stringify(cart));
     }
   }, [cart]);
 
-
   // shopping cart relevant
-
-
-
 
 
   return (
     <div className="App">
 
-      <Navbar  size={cart.length} />
+      <Navbar size={cart.length} />
       {
-          warning && <div className='warning'> Item is already addet to your cart </div>
+        warning && <div className='warning'> Item is already addet to your cart </div>
       }
       {
-          add && <div className='add'> You add an item to your cart </div>
+        add && <div className='add'> You add an item to your cart </div>
       }
 
       <Routes >
-      <Route exact path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/shoes" element={<Shoes />} />
-      <Route path="/jeans" element={<Jeans />} />
-      <Route path="/admin" element={<Admin />} />
-      <Route path="/Feedback" element={<Feedback />} />
-      <Route path="/JdShose" element={<JdShose handleClick={handleClick}/>} />
-      <Route path="/shoppingCart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange}  size={cart.length}/> } />
+        <Route exact path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/shoes" element={<Shoes />} />
+        <Route path="/jeans" element={<Jeans />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/Feedback" element={<Feedback />} />
+        <Route path="/JdShose" element={<JdShose handleClick={handleClick} />} />
+        <Route path="/shoppingCart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange} size={cart.length} />} />
 
-      <Route path="*" element={<h1>404 Not Found</h1>} />
-    </Routes >
+        <Route path="*" element={<h1>404 Not Found</h1>} />
+      </Routes >
       <Footer />
     </div>
   );
