@@ -48,9 +48,9 @@ function App() {
     setCart([...cart, item]);
     console.log(item)
   };
-// get our item into localstorage 
+// get our item into sessionStorage 
   useEffect(() => {
-    setCart(JSON.parse(localStorage.getItem("cart")));
+    setCart(JSON.parse(sessionStorage.getItem("cart")));
   }, []);
 
 
@@ -68,11 +68,11 @@ function App() {
   };
 
 
-// set items in localstorage 
+// set items in sessionStorage 
   useEffect(() => {
     if (cart){
       console.log("this is array using cart",cart);
-      localStorage.setItem('cart', JSON.stringify(cart));
+      sessionStorage.setItem('cart', JSON.stringify(cart));
     }
   }, [cart]);
 
@@ -110,7 +110,7 @@ function App() {
     </div>
   );
 }
-console.log("App.js");
+
 
 
 
