@@ -11,7 +11,6 @@ import Navbar from './components/shared_view/Navbar';
 import Footer from './components/shared_view/Footer';
 import JdShose from "./components/Shopping-Cart/JdShoes";
 import Cart from "./components/Shopping-Cart/cart"
-import JdShoes from './components/Shopping-Cart/JdShoes';
 import { useState, useEffect } from 'react';
 
 

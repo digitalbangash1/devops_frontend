@@ -48,9 +48,12 @@ article {
   background-color: skyblue;
   border-radius: 5px;
   cursor: pointer;
+
 }
 .cart_box div:nth-child(3) button:hover {
   background-color: darkseagreen;
+    border-radius: 5px;
+
 }
 .cart_box div:nth-child(3) span {
   background-color: lightgreen;
@@ -69,10 +72,12 @@ article {
   color: skyblue;
   font-weight: bold;
   letter-spacing: 2px;
+  
 }
 
 .total span:nth-child(2) {
   font-size: 2rem;
   color: green;
   font-weight: bold;
+  
 }
