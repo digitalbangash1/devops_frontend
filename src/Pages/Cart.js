@@ -9,10 +9,8 @@ const Cart = () => {
     useEffect(() => {
         setTotalAmount(cart.reduce((acc, curr) => acc + curr.price, 0));
     }, [cart]);
-    return (
-        <>
-            {cart.length > 0 ? (
-                <>
+    return (<>
+            {cart.length > 0 ? (<>
                     <div className="min-h-[80vh] grid md:grid-cols-2 max-w-6xl mx-auto">
                         <div className="flex flex-col justify-center items-between p-2">
                             {cart.map((item) => {
@@ -58,10 +56,8 @@ const Cart = () => {
                             </button>
                         </Link>
                     </div>
-                </>
-            )}
-        </>
-    );
+                </>)}
+        </>);
 };
 
 export default Cart;
