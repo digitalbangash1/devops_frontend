@@ -11,20 +11,31 @@ import Navbar from './components/shared_view/Navbar';
 import Footer from './components/shared_view/Footer';
 import JdShose from "./components/Shopping-Cart/JdShoes";
 import Cart from "./components/Shopping-Cart/cart"
-import JdShoes from './components/Shopping-Cart/JdShoes';
 import { useState, useEffect } from 'react';
-
+//import {getPersons} from "./api/personApi";
 
 
 
 function App() {
-  // shopping cart relevant
+  // api test persons
+/*
+const [persons, setPersons] = useState([]);
+useEffect(() => {
+  const promise = getPersons();
+  promise.then(response => {
+      const persons = response.data;
+      setPersons(persons);
+      console.log("peeee",persons)
+  });
+}, []);*/
 
+
+// shopping cart relevant
   const [cart, setCart] = useState([]);
   const [warning, setwarning] = useState(false);
   const [add, setadd] = useState(false);
 
-  // click at the product and check if is alrady addet to cart
+    // click at the product and check if is alrady addet to cart
   const handleClick = (item) => {
     let isPresent = false;
     cart.forEach((product) => {
@@ -53,7 +64,6 @@ function App() {
     setCart(JSON.parse(sessionStorage.getItem("cart")));
   }, []);
 
-
   const handleChange = (item, d) => {
     console.log(item)
     let ind = -1
@@ -76,7 +86,6 @@ function App() {
       sessionStorage.setItem('cart', JSON.stringify(cart));
     }
   }, [cart]);
-
   // shopping cart relevant
 
 
