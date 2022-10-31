@@ -1,4 +1,5 @@
 import React from 'react';
+import "@stripe/stripe-js"
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home'
@@ -11,8 +12,10 @@ import Navbar from './components/shared_view/Navbar';
 import Footer from './components/shared_view/Footer';
 import JdShose from "./components/Shopping-Cart/JdShoes";
 import Cart from "./components/Shopping-Cart/cart"
-import JdShoes from './components/Shopping-Cart/JdShoes';
 import { useState, useEffect } from 'react';
+import Checkout from "./Pages/checkout/Checkout";
+import Success from "./Pages/checkout/Success";
+import Cancel from "./Pages/checkout/Cancel";
 
 
 
@@ -100,6 +103,10 @@ function App() {
         <Route path="/Feedback" element={<Feedback />} />
         <Route path="/JdShose" element={<JdShose handleClick={handleClick} />} />
         <Route path="/shoppingCart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange} size={cart.length} />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="/cancel" element={<Cancel />} />
+
 
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes >

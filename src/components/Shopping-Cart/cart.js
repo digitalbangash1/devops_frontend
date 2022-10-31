@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./cart.css";
+import {useNavigate} from "react-router-dom";
+
+
 /*
 function saveItems() {
     var cart = JSON.parse(localStorage.getItem('cart'));   
@@ -31,6 +34,11 @@ const Cart = ({ cart, setCart, handleChange }) => {
 
     });
 
+    const navigate = useNavigate();
+    const navigateToCheckout = () => {
+        navigate("/checkout");
+    }
+
     return (
         <article>
             {cart.map((item) => (
@@ -55,7 +63,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
                 <span>DKK - {price}</span>
             </div>
             <div>
-                <button class="button-87" role="button">Checkout</button>
+                <button onclass="button-87" role="button" onClick={navigateToCheckout}>Checkout</button>
             </div>
         </article>
     );
