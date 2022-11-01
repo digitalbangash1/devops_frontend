@@ -26,11 +26,20 @@ const Cart = ({ cart, setCart, handleChange }) => {
         setPrice(ans);
     };
 
+    // const handleItemPrice = (item) => {
+    //     var amo = 0;
+    //    amo += item.amount * cart.item.price;
+    //     setitemPrice(amo);
+ 
+    // };
+    
+
     useEffect(() => {
         handlePrice();
-
+       // handleItemPrice();
     });
-
+    
+   
     return (
         <article>
             {cart.map((item) => (
@@ -40,12 +49,12 @@ const Cart = ({ cart, setCart, handleChange }) => {
                         <p>{item.title}</p>
                     </div>
                     <div>
-                        <button onClick={() => handleChange(item, +1)}>+</button>
-                        <button>{item.amount}</button>
-                        <button onClick={() => handleChange(item, -1)}>-</button>
+                        <button onClick={() => handleChange(item,+1)}>+</button>
+                        <button>  {item.amount} </button>
+                        <button onClick={() => handleChange(item,-1)}>-</button>
                     </div>
                     <div>
-                        <span>{item.price}</span>
+                        <span>{item.price*item.amount} kr</span>
                         <button onClick={() => handleRemove(item.id)}>Remove</button>
                     </div>
                 </div>

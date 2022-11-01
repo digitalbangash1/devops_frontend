@@ -65,18 +65,13 @@ useEffect(() => {
   }, []);
 
   const handleChange = (item, d) => {
-    console.log(item)
-    let ind = -1
-    cart.forEach((data, index) => {
-      if (data.id === item.id)
-        ind = index
-    });
+    const ind = cart.indexOf(item);
+    console.log( "here is ind ", ind)
     const arr = cart;
-    arr[ind] += d;
-    if (arr[ind] === 0) {
-      arr[ind].amount = 1;
-      setCart([...arr]);
-    }
+    arr[ind].amount += d;
+
+    if (arr[ind].amount === 0) arr[ind].amount = 1;
+    setCart([...arr]);
   };
 
   // set items in sessionStorage 
