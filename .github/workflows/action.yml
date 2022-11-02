@@ -53,8 +53,8 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           working-directory: e2e
-          config: baseUrl=http://devopse22.4a4b.dk
-        env:
+          config: baseUrl=https://samat.admin.samat.diplomportal.dk/
+        #env:
           # pass GitHub token to allow accurately detecting a build vs a re-run build
           #GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
