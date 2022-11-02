@@ -42,7 +42,7 @@ jobs:
          'caprover deploy --caproverUrl=$APP_URL --caproverPassword=${{ secrets.CAPROVER_PASSWORD }} --imageName=$IMAGE_NAME --appName=$APP_NAME'
 
 
-
+test:
     name: Cypress Integration Tests
     needs: build-and-deploy
     runs-on: ubuntu-latest
