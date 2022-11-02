@@ -61,7 +61,6 @@ jobs:
 
 
 
-name: Cypress Tests
  needs: build-and-deploy
 on: [push]
 
