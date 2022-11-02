@@ -42,7 +42,7 @@ jobs:
          'caprover deploy --caproverUrl=$APP_URL --caproverPassword=${{ secrets.CAPROVER_PASSWORD }} --imageName=$IMAGE_NAME --appName=$APP_NAME'
 
 
-jobs:
+
     name: Cypress Integration Tests
     needs: build-and-deploy
     runs-on: ubuntu-latest
@@ -54,7 +54,7 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           working-directory: e2e
-          config: baseUrl=https://samat.admin.samat.diplomportal.dk/
+          config: baseUrl=http://devopse22.4a4b.dk
         env:
           # pass GitHub token to allow accurately detecting a build vs a re-run build
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
