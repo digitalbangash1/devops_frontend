@@ -10,7 +10,8 @@ export default function Update() {
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
     const [quantity, setQuantity] = useState('');
-    const history = useNavigate();
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         setID(localStorage.getItem('ID'))
@@ -28,7 +29,7 @@ export default function Update() {
             quantity,
         }) 
         .then(() =>{
-            history('/read');
+            navigate('/read');
         });
     };
     return (

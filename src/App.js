@@ -11,6 +11,8 @@ import Navbar from './components/shared_view/Navbar';
 import Footer from './components/shared_view/Footer';
 import JdShose from "./components/Shopping-Cart/JdShoes";
 import Read from './components/Admin/Products/Read';
+import Create from './components/Admin/Products/Create';
+import Update from './components/Admin/Products/Update';
 import Cart from "./components/Shopping-Cart/cart"
 import { useState, useEffect } from 'react';
 //import {getPersons} from "./api/personApi";
@@ -105,6 +107,8 @@ useEffect(() => {
         <Route path="/jeans" element={<Jeans />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="read" element={<Read />} />
+        <Route path="create" element={<Create />} />
+        <Route path="update/:id" element={<Update />} />
         <Route path="/Feedback" element={<Feedback />} />
         <Route path="/JdShose" element={<JdShose handleClick={handleClick} />} />
         <Route path="/shoppingCart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange} size={cart.length} />} />
