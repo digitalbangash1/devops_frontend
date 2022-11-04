@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./cart.css";
-import {useNavigate} from "react-router-dom";
-
-
 /*
 function saveItems() {
     var cart = JSON.parse(localStorage.getItem('cart'));   
@@ -29,16 +26,20 @@ const Cart = ({ cart, setCart, handleChange }) => {
         setPrice(ans);
     };
 
+    // const handleItemPrice = (item) => {
+    //     var amo = 0;
+    //    amo += item.amount * cart.item.price;
+    //     setitemPrice(amo);
+ 
+    // };
+    
+
     useEffect(() => {
         handlePrice();
-
+       // handleItemPrice();
     });
-
-    const navigate = useNavigate();
-    const navigateToCheckout = () => {
-        navigate("/checkout");
-    }
-
+    
+   
     return (
         <article>
             {cart.map((item) => (
@@ -48,12 +49,12 @@ const Cart = ({ cart, setCart, handleChange }) => {
                         <p>{item.title}</p>
                     </div>
                     <div>
-                        <button onClick={() => handleChange(item, +1)}>+</button>
-                        <button>{item.amount}</button>
-                        <button onClick={() => handleChange(item, -1)}>-</button>
+                        <button onClick={() => handleChange(item,+1)}>+</button>
+                        <button>  {item.amount} </button>
+                        <button onClick={() => handleChange(item,-1)}>-</button>
                     </div>
                     <div>
-                        <span>{item.price}</span>
+                        <span>{item.price*item.amount} kr</span>
                         <button onClick={() => handleRemove(item.id)}>Remove</button>
                     </div>
                 </div>
@@ -63,7 +64,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
                 <span>DKK - {price}</span>
             </div>
             <div>
-                <button onclass="button-87" role="button" onClick={navigateToCheckout}>Checkout</button>
+                <button className="button-87" role="button">Checkout</button>
             </div>
         </article>
     );
