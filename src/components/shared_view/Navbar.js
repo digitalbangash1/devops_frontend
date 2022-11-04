@@ -9,7 +9,7 @@ const  Navbar = ({ setShow, size }) =>{
 
         <nav className="navbar navbar-expand-lg py-4 navbar-light bg-light ">
 
-            <a className="navbar-brand px-3" href="" alt="SAMAT" >SAMAT</a>
+            <a className="navbar-brand px-3" href="/" >SAMAT</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -51,7 +51,7 @@ const  Navbar = ({ setShow, size }) =>{
 
                     <li className ="cart nav-link" >
                         <span onClick={() => setShow(true)}>
-                            <a class = " fas fa-cart-plus"  href="/shoppingCart"  > </a>
+                            <a className = " fas fa-cart-plus"  href="/shoppingCart"  > </a>
                         </span>
                         <span>{size}</span>
                     </li>
