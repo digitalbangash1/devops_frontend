@@ -2,7 +2,7 @@ import React from "react";
 import './Navbar.css';
 
 
-const  Navbar = ({ setShow, size }) =>{
+const  Navbar = ({size}) =>{
 
     return (
         
@@ -50,8 +50,8 @@ const  Navbar = ({ setShow, size }) =>{
                     </li>
 
                     <li className ="cart nav-link" >
-                        <span onClick={() => setShow(true)}>
-                            <a class = " fas fa-cart-plus"  href="/shoppingCart"  > </a>
+                        <span>
+                            <a className = " fas fa-cart-plus"  href="/shoppingCart"  > </a>
                         </span>
                         <span>{size}</span>
                     </li>

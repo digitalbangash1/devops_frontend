@@ -7,7 +7,7 @@ const JdShoes = ({ handleClick }) => {
     return (
         <div>
             <section className="sec1">
-                {Thelist.map((item) => (
+                {Th elist.map((item) => (
                     <Cards key={item.id} item={item} handleClick={handleClick} />
                 ))}
             </section>

@@ -61,10 +61,10 @@ const Cart = ({ cart, setCart, handleChange }) => {
             ))}
             <div className="total">
                 <span>Total Price of your Items</span>
-                <span>DKK - {price}</span>
+                <span> {price}  DKK</span>
             </div>
             <div>
-                <button class="button-87" role="button">Checkout</button>
+                <button className="button-87" >Checkout</button>
             </div>
         </article>
     );
