@@ -76,13 +76,15 @@ useEffect(() => {
 
   // set items in sessionStorage 
   useEffect(() => {
-    if (cart) {
-      console.log("this is array using cart", cart);
-      sessionStorage.setItem('cart', JSON.stringify(cart));
-    }
+    console.log("this is array using cart", cart);
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+    
   }, [cart]);
   // shopping cart relevant
-
+  if(cart === null){ 
+    console.log("there are no elemant in array")
+    window.location.reload(false);
+}
 
   return (
     <div className="App">
