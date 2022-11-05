@@ -21,8 +21,9 @@ const Cart = ({ cart, setCart, handleChange }) => {
 
 
     const handlePrice = () => {
+        console.log('cart', cart);
         let ans = 0;
-        cart.map((item) => (ans += item.amount * item.price));
+        cart.map((item) => (ans += item.amount * item.product.price));
         setPrice(ans);
     };
 
@@ -43,10 +44,10 @@ const Cart = ({ cart, setCart, handleChange }) => {
     return (
         <article>
             {cart.map((item) => (
-                <div className="cart_box" key={item.id}>
+                <div className="cart_box" key={item.product.id}>
                     <div className="cart_img">
-                        <img src={item.img} alt="" />
-                        <p>{item.title}</p>
+                        <img src={item.product.imageLink} alt="" />
+                        <p>{item.product.name}</p>
                     </div>
                     <div>
                         <button onClick={() => handleChange(item,+1)}>+</button>
@@ -54,7 +55,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
                         <button onClick={() => handleChange(item,-1)}>-</button>
                     </div>
                     <div>
-                        <span>{item.price*item.amount} kr</span>
+                        <span>{item.product.price*item.amount} kr</span>
                         <button onClick={() => handleRemove(item.id)}>Remove</button>
                     </div>
                 </div>

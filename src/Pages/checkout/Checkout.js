@@ -16,14 +16,19 @@ const getStripe = () => {
     return stripePromise;
 };
 
-const Checkout = () => {
+const Checkout = ({ cart }) => {
+//const Checkout = () => {
+
+    let totalPrice = 0;
+    cart.map((item) => (totalPrice += item.amount * item.product.price));
+    console.log('totalPrice', totalPrice);
+
     const [stripeError, setStripeError] = useState(null);
     const [isLoading, setLoading] = useState(false);
     const item = {
         price: "price_1LiGr4LVmlfQD5DtSAUwDPos",
         quantity: 1
     };
-
     const checkoutOptions = {
         lineItems: [item],
         mode: "payment",

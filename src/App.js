@@ -12,9 +12,10 @@ import Footer from './components/shared_view/Footer';
 import JdShose from "./components/Shopping-Cart/JdShoes";
 import Cart from "./components/Shopping-Cart/cart"
 import { useState, useEffect } from 'react';
+import Checkout from "./Pages/checkout/Checkout";
+import Success from "./Pages/checkout/Success";
+import Cancel from "./Pages/checkout/Cancel";
 //import {getPersons} from "./api/personApi";
-
-
 
 function App() {
   // api test persons
@@ -37,9 +38,10 @@ useEffect(() => {
 
     // click at the product and check if is alrady addet to cart
   const handleClick = (item) => {
+    console.log('App.js handle click ...');
     let isPresent = false;
-    cart.forEach((product) => {
-      if (item.id === product.id)
+    cart.forEach((p) => {
+      if (item.id === p.product.id)
         isPresent = true
     })
     if (isPresent) {
@@ -56,7 +58,7 @@ useEffect(() => {
     }, 2000);
 
     // set the new product 
-    setCart([...cart, item]);
+    setCart([...cart, {product: item, amount: 1}]);
     console.log(item)
   };
   // get our item into sessionStorage 
@@ -65,7 +67,8 @@ useEffect(() => {
   }, []);
 
   const handleChange = (item, d) => {
-    const ind = cart.indexOf(item);
+    console.log('cllll', item, d);
+    const ind = cart.findIndex(x => x.product.id === item.product.id);
     console.log( "here is ind ", ind)
     const arr = cart;
     arr[ind].amount += d;
@@ -104,6 +107,9 @@ useEffect(() => {
         <Route path="/Feedback" element={<Feedback />} />
         <Route path="/JdShose" element={<JdShose handleClick={handleClick} />} />
         <Route path="/shoppingCart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange} size={cart.length} />} />
+        <Route path="/checkout" element={<Checkout cart={cart} />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="/cancel" element={<Cancel />} />
 
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes >
