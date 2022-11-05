@@ -26,7 +26,7 @@ const Checkout = ({ cart }) => {
     const [stripeError, setStripeError] = useState(null);
     const [isLoading, setLoading] = useState(false);
     const item = {
-        price: "price_1LiGr4LVmlfQD5DtSAUwDPos",
+        amount_total: totalPrice,
         quantity: 1
     };
     const checkoutOptions = {
