@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./cart.css";
+import { Link } from "react-router-dom";
+import { Button } from "semantic-ui-react";
 /*
 function saveItems() {
     var cart = JSON.parse(localStorage.getItem('cart'));   
@@ -37,6 +39,8 @@ const Cart = ({ cart, setCart, handleChange }) => {
 
     useEffect(() => {
         handlePrice();
+        sessionStorage.setItem('myprice', JSON.stringify(price))
+        console.log(" this is the fainal price", price)
        // handleItemPrice();
     });
     
@@ -65,7 +69,9 @@ const Cart = ({ cart, setCart, handleChange }) => {
                 <span> {price}  DKK</span>
             </div>
             <div>
-                <button className="button-87" >Checkout</button>
+            <Link to="/checkout">
+                <button  className="link-87" >Checkout</button>
+                </Link>
             </div>
         </article>
     );

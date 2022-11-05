@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import { loadStripe } from "@stripe/stripe-js";
 
 import CardIcon from "../../images/credit-card.svg";
@@ -16,17 +16,18 @@ const getStripe = () => {
     return stripePromise;
 };
 
-const Checkout = ({ cart }) => {
+const Checkout = () => {
 //const Checkout = () => {
 
-    let totalPrice = 0;
-    cart.map((item) => (totalPrice += item.amount * item.product.price));
-    console.log('totalPrice', totalPrice);
+    // let totalPrice = 0;
+    // cart.map((item) => (totalPrice += item.amount * item.product.price));
+    // console.log('totalPrice', totalPrice);
+
 
     const [stripeError, setStripeError] = useState(null);
     const [isLoading, setLoading] = useState(false);
     const item = {
-        amount_total: totalPrice,
+        price: "price_1LiGr4LVmlfQD5DtSAUwDPos",
         quantity: 1
     };
     const checkoutOptions = {
