@@ -109,9 +109,9 @@ useEffect(() => {
         <Route path="/shoes" element={<Shoes />} />
         <Route path="/jeans" element={<Jeans />} />
         <Route path="/admin" element={<Admin />} />
-        <Route path="read" element={<Read />} />
-        <Route path="create" element={<Create />} />
-        <Route path="update/:id" element={<Update />} />
+        <Route path="/admin/read" element={<Read />} />
+        <Route path="/admin/create" element={<Create />} />
+        <Route path="/admin/update/:id" element={<Update />} />
         <Route path="/Feedback" element={<Feedback />} />
         <Route path="/JdShose" element={<JdShose handleClick={handleClick} />} />
         <Route path="/shoppingCart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange} size={cart.length} />} />
