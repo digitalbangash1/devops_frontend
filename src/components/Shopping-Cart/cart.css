@@ -92,7 +92,7 @@ article {
   letter-spacing: 2px;
   align-items: center;
   height: 120px;
-  width: 120px;
+  width: 60%;
 }
 
 
@@ -100,7 +100,7 @@ article {
 
 
 /* CSS */
-.button-87 {
+.link-87 {
   margin: 10px;
   padding: 15px 30px;
   text-align: center;
@@ -123,13 +123,13 @@ article {
   margin-top: 10%
  ;}
 
-.button-87:hover {
+.link-87:hover {
   background-position: right center;
   /* change the direction of the change here */
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
 
-.button-87:active {
+.link-87:active {
   transform: scale(0.95);
 }
