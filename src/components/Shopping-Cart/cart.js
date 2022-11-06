@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./cart.css";
+import { Link } from "react-router-dom";
+import { Button } from "semantic-ui-react";
 /*
 function saveItems() {
     var cart = JSON.parse(localStorage.getItem('cart'));   
@@ -21,41 +23,55 @@ const Cart = ({ cart, setCart, handleChange }) => {
 
 
     const handlePrice = () => {
+        console.log('cart', cart);
         let ans = 0;
-        cart.map((item) => (ans += item.amount * item.price));
+        cart.map((item) => (ans += item.amount * item.product.price));
         setPrice(ans);
     };
 
+    // const handleItemPrice = (item) => {
+    //     var amo = 0;
+    //    amo += item.amount * cart.item.price;
+    //     setitemPrice(amo);
+ 
+    // };
+    
+
     useEffect(() => {
         handlePrice();
-
+        sessionStorage.setItem('myprice', JSON.stringify(price))
+        console.log(" this is the fainal price", price)
+       // handleItemPrice();
     });
-
+    
+   
     return (
         <article>
             {cart.map((item) => (
-                <div className="cart_box" key={item.id}>
+                <div className="cart_box" key={item.product.id}>
                     <div className="cart_img">
-                        <img src={item.img} alt="" />
-                        <p>{item.title}</p>
+                        <img src={item.product.imageLink} alt="" />
+                        <p>{item.product.name}</p>
                     </div>
                     <div>
-                        <button onClick={() => handleChange(item, +1)}>+</button>
-                        <button>{item.amount}</button>
-                        <button onClick={() => handleChange(item, -1)}>-</button>
+                        <button onClick={() => handleChange(item,+1)}>+</button>
+                        <button>  {item.amount} </button>
+                        <button onClick={() => handleChange(item,-1)}>-</button>
                     </div>
                     <div>
-                        <span>{item.price}</span>
+                        <span>{item.product.price*item.amount} kr</span>
                         <button onClick={() => handleRemove(item.id)}>Remove</button>
                     </div>
                 </div>
             ))}
             <div className="total">
                 <span>Total Price of your Items</span>
-                <span>DKK - {price}</span>
+                <span> {price}  DKK</span>
             </div>
             <div>
-                <button class="button-87" role="button">Checkout</button>
+            <Link to="/checkout">
+                <button  className="link-87" >Checkout</button>
+                </Link>
             </div>
         </article>
     );

@@ -28,7 +28,7 @@ article {
   align-items: center;
   justify-content: space-between;
   margin-top: 20px;
-  border-bottom: 2px solid skyblue;
+  border-bottom: 2px solid rgb(7, 108, 148);
   padding-bottom: 5px;
 }
 
@@ -36,21 +36,28 @@ article {
   padding: 5px 10px;
   font-weight: bold;
   margin-right: 5px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  border-color: rgb(230, 243, 255);
 }
+.cart_box div:nth-child(2) button:hover {
+  background-color: rgb(247, 162, 4);
+}
+
 
 .cart_box div:nth-child(3) button {
   padding: 5px 10px;
-  font-weight: bold;
+  font-weight: normal;
   letter-spacing: 2px;
   border: none;
   outline: none;
   color: white;
-  background-color: skyblue;
+  background-color: rgb(179, 46, 46);
   border-radius: 5px;
   cursor: pointer;
 }
 .cart_box div:nth-child(3) button:hover {
-  background-color: darkseagreen;
+  background-color: rgb(247, 162, 4);
 }
 .cart_box div:nth-child(3) span {
   background-color: lightgreen;
@@ -85,7 +92,7 @@ article {
   letter-spacing: 2px;
   align-items: center;
   height: 120px;
-  width: 120px;
+  width: 60%;
 }
 
 
@@ -93,7 +100,7 @@ article {
 
 
 /* CSS */
-.button-87 {
+.link-87 {
   margin: 10px;
   padding: 15px 30px;
   text-align: center;
@@ -116,13 +123,13 @@ article {
   margin-top: 10%
  ;}
 
-.button-87:hover {
+.link-87:hover {
   background-position: right center;
   /* change the direction of the change here */
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
 
-.button-87:active {
+.link-87:active {
   transform: scale(0.95);
 }

@@ -11,6 +11,7 @@ function Slider() {
 
   useEffect(() => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+    
   }, []);
 
   return (
@@ -23,8 +24,15 @@ function Slider() {
         >
           {Images.map((image) => {
             return (
-              <motion.div className="item" key={image}>
+              
+              <motion.div   whileHover={{ scale: 1, rotate: 12 }}
+              whileTap={{
+                scale: 0.8,
+                rotate: -30,
+                borderRadius: "80%"
+              }} className="item" key={image}>
                 <img src={image} alt="" />
+                
               </motion.div>
             );
           })}

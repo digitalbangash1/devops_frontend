@@ -10,11 +10,15 @@ import Feedback from "./components/Feedback/Feedback";
 import Navbar from './components/shared_view/Navbar';
 import Footer from './components/shared_view/Footer';
 import JdShose from "./components/Shopping-Cart/JdShoes";
+import Read from './components/Admin/Products/Read';
+import Create from './components/Admin/Products/Create';
+import Update from './components/Admin/Products/Update';
 import Cart from "./components/Shopping-Cart/cart"
 import { useState, useEffect } from 'react';
+import Checkout from "./Pages/checkout/Checkout";
+import Success from "./Pages/checkout/Success";
+import Cancel from "./Pages/checkout/Cancel";
 //import {getPersons} from "./api/personApi";
-
-
 
 function App() {
   // api test persons
@@ -37,9 +41,10 @@ useEffect(() => {
 
     // click at the product and check if is alrady addet to cart
   const handleClick = (item) => {
+    console.log('App.js handle click ...');
     let isPresent = false;
-    cart.forEach((product) => {
-      if (item.id === product.id)
+    cart.forEach((p) => {
+      if (item.id === p.product.id)
         isPresent = true
     })
     if (isPresent) {
@@ -56,7 +61,7 @@ useEffect(() => {
     }, 2000);
 
     // set the new product 
-    setCart([...cart, item]);
+    setCart([...cart, {product: item, amount: 1}]);
     console.log(item)
   };
   // get our item into sessionStorage 
@@ -65,29 +70,27 @@ useEffect(() => {
   }, []);
 
   const handleChange = (item, d) => {
-    console.log(item)
-    let ind = -1
-    cart.forEach((data, index) => {
-      if (data.id === item.id)
-        ind = index
-    });
+    console.log('cllll', item, d);
+    const ind = cart.findIndex(x => x.product.id === item.product.id);
+    console.log( "here is ind ", ind)
     const arr = cart;
-    arr[ind] += d;
-    if (arr[ind] === 0) {
-      arr[ind].amount = 1;
-      setCart([...arr]);
-    }
+    arr[ind].amount += d;
+
+    if (arr[ind].amount === 0) arr[ind].amount = 1;
+    setCart([...arr]);
   };
 
   // set items in sessionStorage 
   useEffect(() => {
-    if (cart) {
-      console.log("this is array using cart", cart);
-      sessionStorage.setItem('cart', JSON.stringify(cart));
-    }
+    console.log("this is array using cart", cart);
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+    
   }, [cart]);
   // shopping cart relevant
-
+  if(cart === null){ 
+    console.log("there are no elemant in array")
+    window.location.reload(false);
+}
 
   return (
     <div className="App">
@@ -106,9 +109,15 @@ useEffect(() => {
         <Route path="/shoes" element={<Shoes />} />
         <Route path="/jeans" element={<Jeans />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/admin/read" element={<Read />} />
+        <Route path="/admin/create" element={<Create />} />
+        <Route path="/admin/update/:id" element={<Update />} />
         <Route path="/Feedback" element={<Feedback />} />
         <Route path="/JdShose" element={<JdShose handleClick={handleClick} />} />
         <Route path="/shoppingCart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange} size={cart.length} />} />
+        <Route path="/checkout" element={<Checkout cart={cart} />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="/cancel" element={<Cancel />} />
 
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes >
