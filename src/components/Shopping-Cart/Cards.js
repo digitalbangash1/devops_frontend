@@ -1,5 +1,8 @@
 import React from "react";
 import "./JdShoes.css";
+import Feedback from "../Feedback/Feedback";
+import { Link } from "react-router-dom";
+
 
 
 const Cards = ({ item, handleClick }) => {
@@ -15,7 +18,8 @@ const Cards = ({ item, handleClick }) => {
                 <p>{title}</p>
                 <p>{author}</p>
                 <p>Price: {price},00 kr</p>
-                <button onClick={() => handleClick(item)} > +   Add to Cart</button>
+                <Link className="feedback" to="/Feedback" >Feedback </Link>
+                <button className="addtocard" onClick={() => handleClick(item)} > +   Add to Cart</button>
             </div>
         </div>
     );

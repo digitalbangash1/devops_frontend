@@ -15,7 +15,7 @@
   .cards {
     width: 360px;
     padding: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
     
   }
   .cards:hover {
@@ -34,6 +34,10 @@
     height: 350px;
     border-radius: 2rem;
   }
+
+  .details{
+    align-items: center;
+  }
   .details p:nth-child(1) {
     font-weight: bold;
     color: rgb(31, 31, 31);
@@ -46,11 +50,11 @@
     font-weight: normal;
     color: rgb(0, 0, 0);
     background-color: rgb(235, 229, 158);
-    border-radius: 2rem;
-    margin-left: 80px;
-    margin-right: 80px;
+    border-radius: 8px;
+    font-size: large;    
+
   }
-  .details button {
+  .addtocard{
     padding: 5px 10px;
     border: 3px;
     border-color: rgb(236, 255, 67);
@@ -63,6 +67,19 @@
     display:block; 
     cursor: grab;
     overflow: hidden; 
+    border-radius: 12px;
+   }
+
+  .feedback{
+    font-weight: normal;
+    background-color: rgb(229, 64, 14);
+    color: rgb(255, 255, 255);
+    font-size: large;
+    width: 150px;    
+    align-items: center;
+    border-color:  rgb(229, 64, 14);
+    border-radius: 8px;
+    margin-bottom: 30px;
    }
 
 
