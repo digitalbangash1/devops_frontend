@@ -15,7 +15,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
 
 
     const handleRemove = (id) => {
-        const arr = cart.filter((item) => item.id !== id);
+        const arr = cart.filter((item) => item.product.id !== id);
         setCart(arr);
         handlePrice();
 
@@ -60,7 +60,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
                     </div>
                     <div>
                         <span>{item.product.price*item.amount} kr</span>
-                        <button onClick={() => handleRemove(item.id)}>Remove</button>
+                        <button onClick={() => handleRemove(item.product.id)}>Remove</button>
                     </div>
                 </div>
             ))}
