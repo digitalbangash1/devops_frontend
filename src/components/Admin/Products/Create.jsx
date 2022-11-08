@@ -11,7 +11,7 @@ export default function Create() {
     const [quantity, setQuantity] = useState('');
     const [imageLink, setImageLink] = useState('');
     const postData = () => {
-        axios.post(`https://localhost:7181/Products`, {
+        axios.post(`https://backend-webshop.admin.samat.diplomportal.dk/Products`, {
             name,
             description,
             price,

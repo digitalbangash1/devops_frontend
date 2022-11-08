@@ -24,7 +24,7 @@ export default function Update() {
     }, []);
 
     const updateAPIData = () => {
-        axios.put(`https://localhost:7181/Products/${id}`, {
+        axios.put(`https://backend-webshop.admin.samat.diplomportal.dk/Products/${id}`, {
             name,
             description,
             price,
@@ -56,7 +56,7 @@ export default function Update() {
                 </Form.Field>
                 <Form.Field>
                     <label>Last Name</label>
-                    <input placeholder='ImageLink' value={quantity} onChange={(e) => setImageLink(e.target.value)}/>
+                    <input placeholder='ImageLink' value={imageLink} onChange={(e) => setImageLink(e.target.value)}/>
                 </Form.Field>
                 <Button type='submit' onClick={updateAPIData}>Update</Button>
             </Form>

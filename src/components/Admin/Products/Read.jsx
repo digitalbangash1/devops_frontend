@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function Read() {
     const [APIData, setAPIData] = useState([]);
     useEffect(() => {
-        axios.get(`https://localhost:7181/Products`)
+        axios.get(`https://backend-webshop.admin.samat.diplomportal.dk/Products`)
             .then((response) => {
                 console.log(response.data)
                 setAPIData(response.data);
@@ -24,14 +24,14 @@ export default function Read() {
     }
 
     const getData = () => {
-        axios.get(`https://localhost:7181/Products`)
+        axios.get(`https://backend-webshop.admin.samat.diplomportal.dk/Products`)
             .then((getData) => {
                 setAPIData(getData.data);
             })
     }
 
     const onDelete = (id) => {
-        axios.delete(`https://localhost:7181/Products/${id}`)
+        axios.delete(`https://backend-webshop.admin.samat.diplomportal.dk/Products/${id}`)
         .then(() => {
             getData();
         })
@@ -59,6 +59,7 @@ export default function Read() {
                                 <Table.Cell>{data.description}</Table.Cell>
                                 <Table.Cell>{data.price}</Table.Cell>
                                 <Table.Cell>{data.quantity}</Table.Cell>
+                                <Table.Cell>{data.imageLink}</Table.Cell>
                                 <Link to='/admin/update/:id'>
                                     <Table.Cell> 
                                         <Button onClick={() => setData(data)}>Update</Button>
