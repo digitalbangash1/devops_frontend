@@ -9,14 +9,14 @@ export default function Create() {
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
     const [quantity, setQuantity] = useState('');
-    const [imageLink, setImageLink] = useState('');
+    const [imagelink, setImageLink] = useState('');
     const postData = () => {
         axios.post(`https://backend-webshop.admin.samat.diplomportal.dk/Products`, {
             name,
             description,
             price,
             quantity,
-            imageLink
+            imagelink
         }).then(() => {
             history.push('/admin/read')
         })
@@ -42,7 +42,7 @@ export default function Create() {
                 </Form.Field>
                 <Form.Field>
                     <label>Name</label>
-                    <input placeholder='imageLink' onChange={(e) => setImageLink(e.target.value)}/>
+                    <input placeholder='imagelink' onChange={(e) => setImageLink(e.target.value)}/>
                 </Form.Field>
                 <Button onClick={postData} type='submit'>Submit</Button>
             </Form>
