@@ -43,19 +43,19 @@ export default function Update() {
                     <input placeholder='Name' value={name} onChange={(e) => setName(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <label>Last Name</label>
+                    <label>Description</label>
                     <input placeholder='Description' value={description} onChange={(e) => setDescription(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <label>Last Name</label>
+                    <label>Price</label>
                     <input placeholder='Price' value={price} onChange={(e) => setPrice(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <label>Last Name</label>
+                    <label>Quantity</label>
                     <input placeholder='Quantity' value={quantity} onChange={(e) => setQuantity(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <label>Last Name</label>
+                    <label>Image Link</label>
                     <input placeholder='Imagelink' value={imagelink} onChange={(e) => setImageLink(e.target.value)}/>
                 </Form.Field>
                 <Button type='submit' onClick={updateAPIData}>Update</Button>

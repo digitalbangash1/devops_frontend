@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function Read() {
     const [APIData, setAPIData] = useState([]);
     useEffect(() => {
-        axios.get(`https://backend-webshop.admin.samat.diplomportal.dk/Products`)
+        axios.get(`https://localhost:7181/Products`)
             .then((response) => {
                 console.log(response.data)
                 setAPIData(response.data);
