@@ -29,6 +29,7 @@ export default function Update() {
             description,
             price,
             quantity,
+            imageLink
         }) 
         .then(() =>{
             navigate('/read');
