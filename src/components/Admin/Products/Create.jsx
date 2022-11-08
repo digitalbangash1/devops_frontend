@@ -16,7 +16,7 @@ export default function Create() {
             price,
             quantity
         }).then(() => {
-            history.push('/read')
+            history.push('/admin/read')
         })
     }
     return (

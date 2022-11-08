@@ -7,9 +7,7 @@ const Cards = ({item, handleClick}) => {
 
     const {name, description, price, imageLink} = item;
     return (
-
         <div className="cards">
-
             <motion.div className="image_box" whileHover={{scale: 1.2, rotate: 0}}
                         whileTap={{
                             scale: 0.7,

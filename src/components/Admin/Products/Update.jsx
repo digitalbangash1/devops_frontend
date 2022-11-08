@@ -29,7 +29,7 @@ export default function Update() {
             quantity,
         }) 
         .then(() =>{
-            navigate('/read');
+            navigate('/admin/read');
         });
     };
     return (

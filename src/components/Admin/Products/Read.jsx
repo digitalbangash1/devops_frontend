@@ -57,7 +57,7 @@ export default function Read() {
                                 <Table.Cell>{data.description}</Table.Cell>
                                 <Table.Cell>{data.price}</Table.Cell>
                                 <Table.Cell>{data.quantity}</Table.Cell>
-                                <Link to='/update'>
+                                <Link to='/admin/update/:id'>
                                     <Table.Cell> 
                                         <Button onClick={() => setData(data)}>Update</Button>
                                     </Table.Cell>
