@@ -2,6 +2,6 @@ import axios from 'axios';
 
 export default axios.create({
     baseURL: 'https://backend-webshop.admin.samat.diplomportal.dk/' ,
-   // baseURL: 'http://localhost:5000',
+    //baseURL: 'https://localhost:7181',
     timeout: 10000
 });

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Cards = ({item, handleClick}) => {
 
-    const {name, description, price, imageLink} = item;
+    const {name, description, price, imagelink} = item;
     return (
         <div className="cards">
             <motion.div className="image_box" whileHover={{scale: 1.2, rotate: 0}}
@@ -14,7 +14,7 @@ const Cards = ({item, handleClick}) => {
                             rotate: -30,
                             borderRadius: "100%"
                         }}>
-                <img src={imageLink} alt=""/>
+                <img src={imagelink} alt=""/>
             </motion.div>
             <div className="details">
                 <p>{name}</p>

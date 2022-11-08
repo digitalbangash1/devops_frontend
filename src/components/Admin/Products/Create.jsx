@@ -3,13 +3,17 @@ import { Button, Form } from 'semantic-ui-react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-export default function Create() {
-    const history = useNavigate;
+
+
+
+export default function Create() {   
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
     const [quantity, setQuantity] = useState('');
     const [imagelink, setImageLink] = useState('');
+
+    const navigate = useNavigate();
     const postData = () => {
         axios.post(`https://backend-webshop.admin.samat.diplomportal.dk/Products`, {
             name,
@@ -17,9 +21,9 @@ export default function Create() {
             price,
             quantity,
             imagelink
-        }).then(() => {
-            history.push('/admin/read')
-        })
+        }).then(() =>{
+            navigate('/admin/read');
+        });
     }
     return (
         <div>
