@@ -14,13 +14,13 @@ export default function Read() {
     }, []);
 
     const setData = (data) => {
-        let { id, name, description, price, quantity, imageLink } = data;
+        let { id, name, description, price, quantity, imagelink } = data;
         localStorage.setItem('ID', id);
         localStorage.setItem('Name', name);
         localStorage.setItem('Description', description);
         localStorage.setItem('Price', price);
         localStorage.setItem('Quantity', quantity);
-        localStorage.setItem('imageLink', imageLink);
+        localStorage.setItem('imageLink', imagelink);
     }
 
     const getData = () => {
@@ -59,7 +59,7 @@ export default function Read() {
                                 <Table.Cell>{data.description}</Table.Cell>
                                 <Table.Cell>{data.price}</Table.Cell>
                                 <Table.Cell>{data.quantity}</Table.Cell>
-                                <Table.Cell>{data.imageLink}</Table.Cell>
+                                <Table.Cell>{data.imagelink}</Table.Cell>
                                 <Link to='/admin/update/:id'>
                                     <Table.Cell> 
                                         <Button onClick={() => setData(data)}>Update</Button>
