@@ -9,12 +9,14 @@ export default function Create() {
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
     const [quantity, setQuantity] = useState('');
+    const [imageLink, setImageLink] = useState('');
     const postData = () => {
-        axios.post(`https://636530c6046eddf1bae7d88f.mockapi.io/Products`, {
+        axios.post(`https://localhost:7181/Products`, {
             name,
             description,
             price,
-            quantity
+            quantity,
+            imageLink
         }).then(() => {
             history.push('/read')
         })
@@ -37,6 +39,10 @@ export default function Create() {
                 <Form.Field>
                     <label>Quantity</label>
                     <input placeholder='quantity' onChange={(e) => setQuantity(e.target.value)}/>
+                </Form.Field>
+                <Form.Field>
+                    <label>Name</label>
+                    <input placeholder='imageLink' onChange={(e) => setImageLink(e.target.value)}/>
                 </Form.Field>
                 <Button onClick={postData} type='submit'>Submit</Button>
             </Form>

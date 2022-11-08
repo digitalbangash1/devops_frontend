@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function Read() {
     const [APIData, setAPIData] = useState([]);
     useEffect(() => {
-        axios.get(`https://636530c6046eddf1bae7d88f.mockapi.io/Products`)
+        axios.get(`https://localhost:7181/Products`)
             .then((response) => {
                 console.log(response.data)
                 setAPIData(response.data);
@@ -14,23 +14,24 @@ export default function Read() {
     }, []);
 
     const setData = (data) => {
-        let { id, name, description, price, quantity } = data;
+        let { id, name, description, price, quantity, imageLink } = data;
         localStorage.setItem('ID', id);
         localStorage.setItem('Name', name);
         localStorage.setItem('Description', description);
         localStorage.setItem('Price', price);
         localStorage.setItem('Quantity', quantity);
+        localStorage.setItem('imageLink', imageLink);
     }
 
     const getData = () => {
-        axios.get(`https://636530c6046eddf1bae7d88f.mockapi.io/Products`)
+        axios.get(`https://localhost:7181/Products`)
             .then((getData) => {
                 setAPIData(getData.data);
             })
     }
 
     const onDelete = (id) => {
-        axios.delete(`https://636530c6046eddf1bae7d88f.mockapi.io/Products/${id}`)
+        axios.delete(`https://localhost:7181/Products/${id}`)
         .then(() => {
             getData();
         })
@@ -44,6 +45,7 @@ export default function Read() {
                         <Table.HeaderCell>Description</Table.HeaderCell>
                         <Table.HeaderCell>Price</Table.HeaderCell>
                         <Table.HeaderCell>Quantity</Table.HeaderCell>
+                        <Table.HeaderCell>imageLink</Table.HeaderCell>
                         <Table.HeaderCell>Update</Table.HeaderCell>
                         <Table.HeaderCell>Delete</Table.HeaderCell>
                     </Table.Row>
@@ -57,6 +59,7 @@ export default function Read() {
                                 <Table.Cell>{data.description}</Table.Cell>
                                 <Table.Cell>{data.price}</Table.Cell>
                                 <Table.Cell>{data.quantity}</Table.Cell>
+                                <Table.Cell>{data.imageLink}</Table.Cell>
                                 <Link to='/update'>
                                     <Table.Cell> 
                                         <Button onClick={() => setData(data)}>Update</Button>
