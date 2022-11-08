@@ -42,7 +42,7 @@ export default function Create() {
                 </Form.Field>
                 <Form.Field>
                     <label>Name</label>
-                    <input placeholder='imageLink' onChange={(e) => setImageLink(e.target.value)}/>
+                    <input placeholder='imagelink' onChange={(e) => setImageLink(e.target.value)}/>
                 </Form.Field>
                 <Button onClick={postData} type='submit'>Submit</Button>
             </Form>
