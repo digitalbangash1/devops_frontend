@@ -10,6 +10,7 @@ export default function Update() {
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
     const [quantity, setQuantity] = useState('');
+    const [imageLink, setImageLink] = useState('');
 
     const navigate = useNavigate();
 
@@ -19,14 +20,16 @@ export default function Update() {
         setDescription(localStorage.getItem('Description'));
         setPrice(localStorage.getItem('Price'));
         setQuantity(localStorage.getItem('Quantity'));
+        setImageLink(localStorage.getItem('imageLink'));
     }, []);
 
     const updateAPIData = () => {
-        axios.put(`https://636530c6046eddf1bae7d88f.mockapi.io/Products/${id}`, {
+        axios.put(`https://localhost:7181/Products/${id}`, {
             name,
             description,
             price,
             quantity,
+            imageLink
         }) 
         .then(() =>{
             navigate('/admin/read');
@@ -50,6 +53,10 @@ export default function Update() {
                 <Form.Field>
                     <label>Last Name</label>
                     <input placeholder='Quantity' value={quantity} onChange={(e) => setQuantity(e.target.value)}/>
+                </Form.Field>
+                <Form.Field>
+                    <label>Last Name</label>
+                    <input placeholder='ImageLink' value={quantity} onChange={(e) => setImageLink(e.target.value)}/>
                 </Form.Field>
                 <Button type='submit' onClick={updateAPIData}>Update</Button>
             </Form>
