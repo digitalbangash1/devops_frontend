@@ -1,7 +1,7 @@
 import React from "react";
 import "./JdShoes.css";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import {motion} from "framer-motion";
+import {Link} from "react-router-dom";
 
 const Cards = ({item, handleClick}) => {
 
@@ -14,13 +14,17 @@ const Cards = ({item, handleClick}) => {
                             rotate: -30,
                             borderRadius: "100%"
                         }}>
+                <Link to={`/jdshoes/${item.id}`}>
                 <img src={imagelink} alt=""/>
+                </Link>
             </motion.div>
             <div className="details">
+
                 <p>{name}</p>
+
                 <p>{description}</p>
                 <motion.p whileHover={{scale: 1.8, rotate: 0}}>Price: {price},00 kr</motion.p>
-                <Link className="feedback" to="/Feedback" >Feedback </Link>
+                <Link className="feedback" to="/Feedback">Feedback </Link>
                 <motion.button whileTap={{
                     scale: 1.5,
                     borderRadius: "50%"

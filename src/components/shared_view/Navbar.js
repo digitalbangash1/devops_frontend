@@ -29,13 +29,13 @@ const  Navbar = ({size}) =>{
                         <a className="nav-link" href="/Feedback">Feedback</a>
                     </li>
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a className="nav-link dropdown-toggle" href="/#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Categories
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a className="dropdown-item" href="/shoes">Shoes</a>
-                            <a className="dropdown-item" href="/JdShose" >Jd Shoes </a>
+                            <a className="dropdown-item" href="/jdshoes" >Jd Shoes </a>
                             <a className="dropdown-item" href="/jeans">Jeans</a>
 
                             <div className="dropdown-divider"></div>
@@ -43,7 +43,7 @@ const  Navbar = ({size}) =>{
                         </div>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link disabled" href="#">Disabled</a>
+                        <a className="nav-link disabled" href="/#">Disabled</a>
                     </li>
                     <li className="nav-login">
                         <a className="nav-link" href="/login">Login</a>

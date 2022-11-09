@@ -19,3 +19,8 @@ export function deleteProduct(id){
     const response = axiosInstance.delete(`/products/${id}`);
     return response;
 }
+
+export function getProduct(id) {
+    const response = axiosInstance.get(`/pro/${id}`);
+    return response;
+}

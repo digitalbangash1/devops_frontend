@@ -9,7 +9,7 @@ import Jeans from "./components/products/jeans/jeans.js";
 import Feedback from "./components/Feedback/Feedback";
 import Navbar from './components/shared_view/Navbar';
 import Footer from './components/shared_view/Footer';
-import JdShose from "./components/Shopping-Cart/JdShoes";
+import JdShoes from "./components/Shopping-Cart/JdShoes";
 import Read from './components/Admin/Products/Read';
 import Create from './components/Admin/Products/Create';
 import Update from './components/Admin/Products/Update';
@@ -18,6 +18,7 @@ import { useState, useEffect } from 'react';
 import Checkout from "./Pages/checkout/Checkout";
 import Success from "./Pages/checkout/Success";
 import Cancel from "./Pages/checkout/Cancel";
+import ProductDetails from "./components/products/ProductDetails";
 //import {getPersons} from "./api/personApi";
 
 function App() {
@@ -113,11 +114,14 @@ useEffect(() => {
         <Route path="/admin/create" element={<Create />} />
         <Route path="/admin/update/:id" element={<Update />} />
         <Route path="/Feedback" element={<Feedback />} />
-        <Route path="/JdShose" element={<JdShose handleClick={handleClick} />} />
+        <Route path="/jdshoes" element={<JdShoes handleClick={handleClick} />} />
+        <Route path="/jdshoes/:id" element={<ProductDetails/>}/>
         <Route path="/shoppingCart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange} size={cart.length} />} />
         <Route path="/checkout" element={<Checkout cart={cart} />} />
         <Route path="/success" element={<Success />} />
         <Route path="/cancel" element={<Cancel />} />
+
+
 
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes >
