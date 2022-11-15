@@ -5,8 +5,23 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter} from 'react-router-dom';
 import './index.css';
 import App from './App';
-
 import { createRoot } from 'react-dom/client';
+
+import * as Sentry from "@sentry/react";
+import { BrowserTracing } from "@sentry/tracing";
+
+
+Sentry.init({
+    dsn: "https://a09d6ebaab994576bb70a810d317964a@o4504162605268992.ingest.sentry.io/4504162612412416",
+    integrations: [new BrowserTracing()],
+  
+    // Set tracesSampleRate to 1.0 to capture 100%
+    // of transactions for performance monitoring.
+    // We recommend adjusting this value in production
+    tracesSampleRate: 1.0,
+  });
+  
+
 
 
 
