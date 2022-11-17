@@ -21,18 +21,19 @@ const Sidebar = () => {
       {/*  menu */}
       <div className="menu">
         {SidebarData.map((item, index)=>{
-          return(
-            <div className={selected===index?'menuItem active': 'menuItem'}>
-            <li key={index}> 
-              <Link to={'/admin/read'} >
-                </Link></li>
+   return(
+    <li className={selected===index?'menuItem active': 'menuItem'}
+    key={index}
+    onClick={()=>setSelected(index) }
+    >
 
-              <item.icon/>
-              <span>
-                {item.heading}
-              </span>
-            </div>
-          )
+      <item.icon/>
+      <a href={item.url}>
+        {item.heading}
+      </a>
+    </li>
+
+  )
         })}
 
         <div className="menuItem">

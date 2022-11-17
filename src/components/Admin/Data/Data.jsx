@@ -35,7 +35,7 @@ export const SidebarData = [
     {
         icon: UilPackage,
         heading: 'Products',
-        path: "/admin/read",
+        url: '/admin/read',
     },
 ];
 
