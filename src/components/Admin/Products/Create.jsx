@@ -14,6 +14,7 @@ export default function Create() {
     const [imagelink, setImageLink] = useState('');
 
     const navigate = useNavigate();
+    
     const postData = () => {
         axios.post(`https://backend-webshop.admin.samat.diplomportal.dk/Products`, {
             name,
@@ -21,7 +22,8 @@ export default function Create() {
             price,
             quantity,
             imagelink
-        }).then(() =>{
+        }) 
+        .then(() =>{
             navigate('/admin/read');
         });
     }
@@ -30,25 +32,25 @@ export default function Create() {
             <Form className="create-form">
                 <Form.Field>
                     <label>Name</label>
-                    <input placeholder='name' onChange={(e) => setName(e.target.value)}/>
+                    <input placeholder='Enter Name' onChange={(e) => setName(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
                     <label>Description</label>
-                    <input placeholder='description' onChange={(e) => setDescription(e.target.value)}/>
+                    <input placeholder='Write Description' onChange={(e) => setDescription(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
                     <label>Price</label>
-                    <input placeholder='price' onChange={(e) => setPrice(e.target.value)}/>
+                    <input placeholder='Enter Price' onChange={(e) => setPrice(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
                     <label>Quantity</label>
-                    <input placeholder='quantity' onChange={(e) => setQuantity(e.target.value)}/>
+                    <input placeholder='Enter Amount' onChange={(e) => setQuantity(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <label>Name</label>
-                    <input placeholder='imagelink' onChange={(e) => setImageLink(e.target.value)}/>
+                    <label>Image Link</label>
+                    <input placeholder='Enter Url here' onChange={(e) => setImageLink(e.target.value)}/>
                 </Form.Field>
-                <Button onClick={postData} type='submit'>Submit</Button>
+                <Button onClick={postData} type='submit'>Add New Product</Button>
             </Form>
         </div>
     )

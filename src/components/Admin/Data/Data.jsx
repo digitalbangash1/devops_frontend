@@ -17,6 +17,7 @@ import img2 from "../../Imgs/img2.png";
 import img3 from "../../Imgs/img3.png";
 
 
+
 //Sidebar Data
 export const SidebarData = [
     {
@@ -34,6 +35,7 @@ export const SidebarData = [
     {
         icon: UilPackage,
         heading: 'Products',
+        path: "/admin/read",
     },
 ];
 

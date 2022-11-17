@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import Logo from '../../Imgs/Logo.png'
 import './Sidebar.css'
-
+import { Link } from 'react-router-dom'
 import { SidebarData } from '../Data/Data';
 import {UilSignOutAlt} from '@iconscout/react-unicons'
+
 const Sidebar = () => {
 
-    const [selected, setSelected] = useState(0)
+  const [selected, setSelected] = useState(0)
 
   return (
     <div className="Sidebar">
@@ -21,10 +22,11 @@ const Sidebar = () => {
       <div className="menu">
         {SidebarData.map((item, index)=>{
           return(
-            <div className={selected===index?'menuItem active': 'menuItem'}
-            key={index}
-            onClick={()=>setSelected(index)}
-            >
+            <div className={selected===index?'menuItem active': 'menuItem'}>
+            <li key={index}> 
+              <Link to={'/admin/read'} >
+                </Link></li>
+
               <item.icon/>
               <span>
                 {item.heading}
