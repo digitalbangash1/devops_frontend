@@ -18,7 +18,7 @@ const browserHistory = createBrowserHistory();
 const authService = new AuthServices();
 
 export default class SignIn extends Component {
-  
+
   constructor() {
     super()
     this.state = {
@@ -33,7 +33,7 @@ export default class SignIn extends Component {
 
   handlValues = (e) => {
     const { name, value } = e.target
-    this.setState({ [name]: value }, 
+    this.setState({ [name]: value },
       console.log('name', name, 'value:', value),)
   }
 
@@ -47,7 +47,7 @@ export default class SignIn extends Component {
     this.setState({
       EmailFlag: false,
       PassWordFlag: false,
-      
+
     })
 
 
@@ -60,14 +60,12 @@ export default class SignIn extends Component {
   }
   handleForceupdateMethod() {
     this.forceUpdate();
-}
+  }
 
   handleSubmit = () => {
     this.CheckValidity()
     if (this.state.Email !== '' &&
-      this.state.PassWord !== '' )
-      
-      {
+      this.state.PassWord !== '') {
       console.log('Accepted')
 
       let data = {
@@ -75,15 +73,15 @@ export default class SignIn extends Component {
         passWord: this.state.PassWord,
         role: this.state.RoleValue,
       }
-       authService.SignIn(data).then((data) => {
-        console.log('data:', data) 
-        
+      authService.SignIn(data).then((data) => {
+        console.log('data:', data)
+
 
         if (data.data.isSuccess) {
-       
-         browserHistory.push("/admin")
-         window.location.reload()
-          
+
+          browserHistory.push("/admin")
+          window.location.reload()
+
         }
         else {
           console.log('Somthing went worong')
@@ -100,7 +98,7 @@ export default class SignIn extends Component {
     }
   }
 
- 
+
 
   render() {
     console.log('State : ', this.state)
@@ -111,33 +109,33 @@ export default class SignIn extends Component {
           <div className="Body">
             <form className="form">
 
-              <TextField 
-              error={this.state.EmailFlag}
-              className="TextField" 
-              name="Email"
-              label="Email" 
-              variant="outlined" 
-              size="small" 
-              value={this.state.Email}
-              onChange={this.handlValues}
+              <TextField
+                error={this.state.EmailFlag}
+                className="TextField"
+                name="Email"
+                label="Email"
+                variant="outlined"
+                size="small"
+                value={this.state.Email}
+                onChange={this.handlValues}
               />
 
-              <TextField 
-              error={this.state.PassWordFlag}
-              className="TextField" 
-              name="PassWord"
-              label="PassWord" 
-              variant="outlined" 
-              size="small"
-              type="password"
-              value={this.state.PassWord}
-              onChange={this.handlValues}
+              <TextField
+                error={this.state.PassWordFlag}
+                className="TextField"
+                name="PassWord"
+                label="PassWord"
+                variant="outlined"
+                size="small"
+                type="password"
+                value={this.state.PassWord}
+                onChange={this.handlValues}
               />
-              <RadioGroup 
-              className="Roles" 
-              name="Role"
-              value={this.state.RoleValue} 
-              onChange={this.handleChangeRole}
+              <RadioGroup
+                className="Roles"
+                name="Role"
+                value={this.state.RoleValue}
+                onChange={this.handleChangeRole}
               >
                 <FormControlLabel className="RoleValue" value="Admin" control={<Radio />} label="Admin" />
                 <FormControlLabel className="RoleValue" value="User" control={<Radio />} label="User" />
@@ -146,14 +144,14 @@ export default class SignIn extends Component {
 
           </div>
           <div className="buttons">
-            <Link to = "/login">
-            <Button className="Btn" color="primary"  >Create New Account</Button>
+            <Link to="/login">
+              <Button className="Btn" color="primary"  >Create New Account</Button>
             </Link>
-            <Button className="Btn" variant="contained" color="primary" onClick={this.handleSubmit }>
-             
+            <Button className="Btn" variant="contained" color="primary" onClick={this.handleSubmit}>
+
               Sign In
             </Button>
-            
+
           </div>
         </div>
       </div>

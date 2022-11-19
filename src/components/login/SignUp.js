@@ -15,7 +15,7 @@ const authService = new AuthServices();
 const browserHistory = createBrowserHistory();
 
 export default class SignUp extends Component {
- 
+
   constructor() {
     super()
     this.state = {
@@ -62,7 +62,7 @@ export default class SignUp extends Component {
   }
 
   handleSubmit = (e) => {
-    
+
     this.CheckValidity()
     if (this.state.Email !== '' &&
       this.state.PassWord !== '' &&
@@ -96,7 +96,7 @@ export default class SignUp extends Component {
       console.log('Not Accepted')
     }
   }
-  
+
   handleSignIn = () => {
     this.props.history.push("/SignIn")
   }
@@ -142,8 +142,8 @@ export default class SignUp extends Component {
                 value={this.state.ConfirmPassWord}
                 onChange={this.handlValues}
               />
-              <RadioGroup 
-               className="Roles" 
+              <RadioGroup
+                className="Roles"
                 name="Role"
                 value={this.state.RoleValue}
                 onChange={this.handleChangeRole}
@@ -155,8 +155,8 @@ export default class SignUp extends Component {
 
           </div>
           <div className="buttons">
-            <Link to = "/login/SignIn" >
-            <Button className="Btn" color="primary">Sign In</Button>
+            <Link to="/login/SignIn" >
+              <Button className="Btn" color="primary">Sign In</Button>
             </Link>
             <Button className="Btn" variant="contained" color="primary" onClick={this.handleSubmit}>
               SignUp
