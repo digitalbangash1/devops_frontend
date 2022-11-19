@@ -1,0 +1,10 @@
+name: E2E on Edge
+on: push
+jobs:
+  tests:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cypress-io/github-action@v4
+        with:
+          browser: edge

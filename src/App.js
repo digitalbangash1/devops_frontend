@@ -9,27 +9,71 @@ import Jeans from "./components/products/jeans/jeans.js";
 import Feedback from "./components/Feedback/Feedback";
 import Navbar from './components/shared_view/Navbar';
 import Footer from './components/shared_view/Footer';
-import JdShose from "./components/Shopping-Cart/JdShoes";
+import JdShoes from "./components/Shopping-Cart/JdShoes";
+import Read from './components/Admin/Products/Read';
+import Create from './components/Admin/Products/Create';
+import Update from './components/Admin/Products/Update';
 import Cart from "./components/Shopping-Cart/cart"
-import Shopping from "./components/Shopping-Cart/shopping";
-import JdShoes from './components/Shopping-Cart/JdShoes';
 import { useState, useEffect } from 'react';
-
-
-
+import Checkout from "./Pages/checkout/Checkout";
+import Success from "./Pages/checkout/Success";
+import Cancel from "./Pages/checkout/Cancel";
+import ProductDetails from "./components/products/ProductDetails";
+//import {getPersons} from "./api/personApi";
 
 function App() {
-  // shopping cart relevant
-  const [show, setShow] = useState(true);
-  const [cart, setCart] = useState([]);
+  // api test persons
+/*
+const [persons, setPersons] = useState([]);
+useEffect(() => {
+  const promise = getPersons();
+  promise.then(response => {
+      const persons = response.data;
+      setPersons(persons);
+      console.log("peeee",persons)
+  });
+}, []);*/
 
+
+// shopping cart relevant
+  const [cart, setCart] = useState([]);
+  const [warning, setwarning] = useState(false);
+  const [add, setadd] = useState(false);
+
+    // click at the product and check if is alrady addet to cart
   const handleClick = (item) => {
-    if (cart.indexOf(item) !== -1) return;
-    setCart([...cart, item]);
+    console.log('App.js handle click ...');
+    let isPresent = false;
+    cart.forEach((p) => {
+      if (item.id === p.product.id)
+        isPresent = true
+    })
+    if (isPresent) {
+      setwarning(true);
+      setTimeout(() => {
+        setwarning(false)
+      }, 2000);
+      return;
+    }
+    else
+      setadd(true);
+    setTimeout(() => {
+      setadd(false)
+    }, 2000);
+
+    // set the new product 
+    setCart([...cart, {product: item, amount: 1}]);
+    console.log(item)
   };
+  // get our item into sessionStorage 
+  useEffect(() => {
+    setCart(JSON.parse(sessionStorage.getItem("cart")));
+  }, []);
 
   const handleChange = (item, d) => {
-    const ind = cart.indexOf(item);
+    console.log('cllll', item, d);
+    const ind = cart.findIndex(x => x.product.id === item.product.id);
+    console.log( "here is ind ", ind)
     const arr = cart;
     arr[ind].amount += d;
 
@@ -37,33 +81,55 @@ function App() {
     setCart([...arr]);
   };
 
+  // set items in sessionStorage 
   useEffect(() => {
-    console.log("cart change");
+    console.log("this is array using cart", cart);
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+    
   }, [cart]);
   // shopping cart relevant
-
+  if(cart === null){ 
+    console.log("there are no elemant in array")
+    window.location.reload(false);
+}
 
   return (
     <div className="App">
 
-      <Navbar setShow={setShow} size={cart.length} />
-      <Routes >
-      <Route exact path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/shoes" element={<Shoes />} />
-      <Route path="/jeans" element={<Jeans />} />
-      <Route path="/admin" element={<Admin />} />
-      <Route path="/Feedback" element={<Feedback />} />
-      <Route path="/JdShose" element={<JdShose handleClick={handleClick}/>} />
-      <Route path="/shoppingCart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange}/>} />
+      <Navbar size={cart.length} />
+      {
+        warning && <div className='warning'> Item is already addet to your cart </div>
+      }
+      {
+        add && <div className='add'> You add an item to your cart </div>
+      }
 
-      <Route path="*" element={<h1>404 Not Found</h1>} />
-    </Routes >
-    
+      <Routes >
+        <Route exact path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/shoes" element={<Shoes />} />
+        <Route path="/jeans" element={<Jeans />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin/read" element={<Read />} />
+        <Route path="/admin/create" element={<Create />} />
+        <Route path="/admin/update/:id" element={<Update />} />
+        <Route path="/Feedback" element={<Feedback />} />
+        <Route path="/jdshoes" element={<JdShoes handleClick={handleClick} />} />
+        <Route path="/jdshoes/:id" element={<ProductDetails/>}/>
+        <Route path="/shoppingCart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange} size={cart.length} />} />
+        <Route path="/checkout" element={<Checkout cart={cart} />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="/cancel" element={<Cancel />} />
+
+
+
+        <Route path="*" element={<h1>404 Not Found</h1>} />
+      </Routes >
       <Footer />
     </div>
   );
 }
+console.log("App.js");
 
 
 

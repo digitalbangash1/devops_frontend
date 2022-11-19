@@ -28,7 +28,7 @@ article {
   align-items: center;
   justify-content: space-between;
   margin-top: 20px;
-  border-bottom: 2px solid skyblue;
+  border-bottom: 2px solid rgb(7, 108, 148);
   padding-bottom: 5px;
 }
 
@@ -36,21 +36,28 @@ article {
   padding: 5px 10px;
   font-weight: bold;
   margin-right: 5px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  border-color: rgb(230, 243, 255);
 }
+.cart_box div:nth-child(2) button:hover {
+  background-color: rgb(247, 162, 4);
+}
+
 
 .cart_box div:nth-child(3) button {
   padding: 5px 10px;
-  font-weight: bold;
+  font-weight: normal;
   letter-spacing: 2px;
   border: none;
   outline: none;
   color: white;
-  background-color: skyblue;
+  background-color: rgb(179, 46, 46);
   border-radius: 5px;
   cursor: pointer;
 }
 .cart_box div:nth-child(3) button:hover {
-  background-color: darkseagreen;
+  background-color: rgb(247, 162, 4);
 }
 .cart_box div:nth-child(3) span {
   background-color: lightgreen;
@@ -75,4 +82,54 @@ article {
   font-size: 2rem;
   color: green;
   font-weight: bold;
+}
+
+.checkout{
+
+  font-size: 2rem;
+  color: skyblue;
+  font-weight: bold;
+  letter-spacing: 2px;
+  align-items: center;
+  height: 120px;
+  width: 60%;
+}
+
+
+
+
+
+/* CSS */
+.link-87 {
+  margin: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  
+  font-size: larger;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  border-color: #ff0000;
+  font-weight: 100;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 70%;
+  align-items: center;
+  margin-top: 10%
+ ;}
+
+.link-87:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.link-87:active {
+  transform: scale(0.95);
 }

@@ -5,28 +5,34 @@ import "./slider.css";
 
 
 function Slider() {
-  console.log(Images);
-  const [width,setWidth] = useState(0);
+  const [width, setWidth] = useState(0);
 
-  const carousel =useRef();
-  
-useEffect(()=>{
-console.log(carousel.current.scrollWidth, carousel.current.offsetWidth);
-setWidth(carousel.current.scrollWidth -carousel.current.offsetWidth);
-},[]);
+  const carousel = useRef();
+
+  useEffect(() => {
+    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+    
+  }, []);
 
   return (
     <div className="Slider">
-      <motion.div ref={carousel} className="carousel" whileTap={{cursor:"grabbing"}}>
+      <motion.div ref={carousel} className="carousel" whileTap={{ cursor: "grabbing" }}>
         <motion.div
-         drag="x"
-         dragConstraints={{right:0, left:-width}}
-         className="inner-carousel"
-         >
+          drag="x"
+          dragConstraints={{ right: 0, left: -width }}
+          className="inner-carousel"
+        >
           {Images.map((image) => {
             return (
-              <motion.div className="item" key={image}>
+              
+              <motion.div   whileHover={{ scale: 1, rotate: 12 }}
+              whileTap={{
+                scale: 0.8,
+                rotate: -30,
+                borderRadius: "80%"
+              }} className="item" key={image}>
                 <img src={image} alt="" />
+                
               </motion.div>
             );
           })}

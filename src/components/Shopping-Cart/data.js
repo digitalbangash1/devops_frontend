@@ -95,6 +95,14 @@ const Thelist = [
       img: "https://user-images.githubusercontent.com/70900247/192090400-caee7312-cf78-4903-8088-52b80f5d1165.jpg",
       amount: 1,
     },
+    {
+      id: 13,
+      title: "MAX ali 4 - Sneakers high",
+      author: "by Nike | 25 April 2018",
+      price: 590,
+      img: "https://user-images.githubusercontent.com/70900247/192090171-4b88d472-a3d5-4130-b4ba-a163cddc2538.jpg",
+      amount: 1,
+    }
   ];
   
   export default Thelist;

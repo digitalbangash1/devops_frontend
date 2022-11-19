@@ -1,71 +1,77 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
+  margin: 0;
+  padding: 0;
+}
 
 
-  .sec1 {
-    width: 70%;
-    margin: auto;
-    margin-top: 5%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-  }
-  .cards {
-    width: 360px;
-    padding: 10px;
-    margin-bottom: 40px;
-    
-  }
-  .cards:hover {
-    box-shadow: 0 10px 10px 10px rbga(0, 0, 0, 0.1);
-    
-    
-  }
-  .image_box img {
-    width: 350px;
-    height: 350px;
-    border-radius: 2rem;
-  }
-  
-  .image_box img {
-    width: 350px;
-    height: 350px;
-    border-radius: 2rem;
-  }
-  .details p:nth-child(1) {
-    font-weight: bold;
-    color: rgb(31, 31, 31);
-  }
-  .details p:nth-child(2) {
-    color: rgb(0, 0, 0);
-    font-size: 0.8rem;
-  }
-  .details p:nth-child(3) {
-    font-weight: normal;
-    color: rgb(0, 0, 0);
-    background-color: rgb(235, 229, 158);
-    border-radius: 2rem;
-    margin-left: 80px;
-    margin-right: 80px;
-  }
-  .details button {
-    padding: 5px 10px;
-    border: 3px;
-    border-color: rgb(236, 255, 67);
-    font-weight: normal;
-    background-color: rgb(36, 39, 170);
-    color: rgb(255, 255, 255);
-    outline: none;
-    font-size: large;
-    width: 350px;
-    display:block; 
-    cursor: grab;
-    overflow: hidden; 
-   }
+.sec1 {
+  width: 70%;
+  margin: auto;
+  margin-top: 5%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
+.cards {
+  width: 360px;
+  padding: 10px;
+  margin-bottom: 40px;
+
+}
+.cards:hover {
+  box-shadow: 0 10px 10px 10px rbga(0, 0, 0, 0.1);
 
 
+}
+.image_box img {
+  width: 350px;
+  height: 350px;
+  border-radius: 2rem;
+}
 
-  
-  /*cursor: pointer; can be used when we want to have a clickable button !!*/
+.image_box img {
+  width: 350px;
+  height: 350px;
+  border-radius: 2rem;
+}
+.details p:nth-child(1) {
+  font-weight: bold;
+  color: rgb(31, 31, 31);
+}
+.details p:nth-child(2) {
+  color: rgb(0, 0, 0);
+  font-size: 0.8rem;
+}
+.details p:nth-child(3) {
+  font-weight: normal;
+  color: rgb(0, 0, 0);
+  background-color: rgb(235, 229, 158);
+  border-radius: 2rem;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+.details button {
+  padding: 5px 10px;
+  border: 3px;
+  border-color: rgb(236, 255, 67);
+  font-weight: normal;
+  background-color: rgb(36, 39, 170);
+  color: rgb(255, 255, 255);
+  outline: none;
+  font-size: large;
+  width: 350px;
+  display:block; 
+  cursor: grab;
+  overflow: hidden; 
+ }
+ .feedback{
+  font-weight: normal;
+  background-color: rgb(229, 64, 14);
+  color: rgb(255, 255, 255);
+  font-size: large;
+  width: 150px;
+  align-items: center;
+  border-color:  rgb(229, 64, 14);
+  border-radius: 8px;
+  margin-bottom: 30px;
+ }

@@ -1,16 +1,15 @@
 import React from "react";
 import './Navbar.css';
-import { useState } from "react";
 
 
-const  Navbar = ({ setShow, size }) =>{
-    
+const  Navbar = ({size}) =>{
+
     return (
         
 
-        <nav className="navbar navbar-expand-lg py-4 navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg py-4 navbar-light bg-light ">
 
-            <a className="navbar-brand px-3" href="" alt="SAMAT" >SAMAT</a>
+            <a className="navbar-brand px-3" href="/" >SAMAT</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -30,13 +29,13 @@ const  Navbar = ({ setShow, size }) =>{
                         <a className="nav-link" href="/Feedback">Feedback</a>
                     </li>
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a className="nav-link dropdown-toggle" href="/#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Categories
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a className="dropdown-item" href="/shoes">Shoes</a>
-                            <a className="dropdown-item" href="/JdShose">Jd Shoes </a>
+                            <a className="dropdown-item" href="/jdshoes" >Jd Shoes </a>
                             <a className="dropdown-item" href="/jeans">Jeans</a>
 
                             <div className="dropdown-divider"></div>
@@ -44,15 +43,15 @@ const  Navbar = ({ setShow, size }) =>{
                         </div>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link disabled" href="#">Disabled</a>
+                        <a className="nav-link disabled" href="/#">Disabled</a>
                     </li>
                     <li className="nav-login">
                         <a className="nav-link" href="/login">Login</a>
                     </li>
 
                     <li className ="cart nav-link" >
-                        <span onClick={() => setShow(false)}>
-                            <a class = " fas fa-cart-plus"  href="/shoppingCart" > </a>
+                        <span>
+                            <a className = " fas fa-cart-plus"  href="/shoppingCart"  > </a>
                         </span>
                         <span>{size}</span>
                     </li>

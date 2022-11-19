@@ -1,0 +1,78 @@
+name: Caprover Build and Deploy
+
+on:
+  push:
+    branches:
+      - 'master'
+      - 'devlopment'
+  workflow_dispatch:      
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Initialize Emumlation
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      # Setup Docker
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      # Login to DockerHub
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      # Build Docker image and push to DockerHub
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: salim963/devops:${{github.run_number}},
+      # Install caprover cli
+      - name: install caprover cli
+        run: npm install -g caprover
+      # Trigger deploy on Caprover instance
+      - name: Deploy app
+        env: 
+          APP_NAME: 'samat'
+          APP_URL: 'https://admin.samat.diplomportal.dk/'
+          IMAGE_NAME: 'salim963/devops:${{github.run_number}}'
+        run: 
+         'caprover deploy --caproverUrl=$APP_URL --caproverPassword=${{ secrets.CAPROVER_PASSWORD }} --imageName=$IMAGE_NAME --appName=$APP_NAME'
+
+  test:
+    name: Cypress Integration Tests
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Run Cypress
+        uses: cypress-io/github-action@v4
+        with:
+          working-directory: e2e
+          config: baseUrl=https://samat.admin.samat.diplomportal.dk/
+        #env:
+          # pass GitHub token to allow accurately detecting a build vs a re-run build
+          #GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+
+
+
+#  needs: build-and-deploy
+# on: [push]
+
+# jobs:
+#   cypress-run:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#       # Install NPM dependencies, cache them correctly
+#       # and run all Cypress tests
+#       - name: Cypress run
+#         uses: cypress-io/github-action@v4
+#         with:
+#         working-directory: e2e
+#         config: baseUrl=https://samat.admin.samat.diplomportal.dk/
