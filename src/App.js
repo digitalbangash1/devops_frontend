@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home'
-import Login from './components/login/Login';
+import SignIn from './components/login/SignIn';
+import SignUp from './components/login/SignUp';
 import Shoes from './components/products/shoes/Shoes'
 import Admin from './Pages/Admin/Admin';
 import Jeans from "./components/products/jeans/jeans.js";
@@ -106,7 +107,8 @@ useEffect(() => {
 
       <Routes >
         <Route exact path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login/" element={<SignUp />} />
+        <Route path="/login/signin" element={<SignIn />} />
         <Route path="/shoes" element={<Shoes />} />
         <Route path="/jeans" element={<Jeans />} />
         <Route path="/admin" element={<Admin />} />
