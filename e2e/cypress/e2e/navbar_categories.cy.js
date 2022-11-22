@@ -1,3 +1,6 @@
+Cypress.on('uncaught:exception', (err, runnable) => {
+    return false;
+});
 describe("Routes", () => {
     before(() => {
         cy.visit("/");
