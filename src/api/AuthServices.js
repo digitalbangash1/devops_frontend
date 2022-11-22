@@ -13,4 +13,4 @@ export default class AuthServices {
     return axiosInstance.post('/api/Auth/Login', data, false)
   }
 }
-
+//auth classs
