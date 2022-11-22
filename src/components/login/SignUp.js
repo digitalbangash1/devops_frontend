@@ -79,7 +79,7 @@ export default class SignUp extends Component {
         console.log('data :', data)
 
         if (data.data.isSuccess) {
-          browserHistory.push("/admin")
+          browserHistory.push("/login/signin")
           window.location.reload()
         }
         else {
@@ -97,9 +97,7 @@ export default class SignUp extends Component {
     }
   }
 
-  handleSignIn = () => {
-    this.props.history.push("/SignIn")
-  }
+
 
   render() {
     console.log('State : ', this.state)
