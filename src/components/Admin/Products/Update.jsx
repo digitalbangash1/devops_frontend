@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Button, Form } from 'semantic-ui-react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './Styleform.css';
 
 export default function Update() {
     const [id, setID] = useState(null);
