@@ -10,7 +10,7 @@ const MainDash = () => {
         <h1>Dashboard</h1>
         <Create/>
         <Read/>
-        
+        <Update/>
     </div>
   )
 }

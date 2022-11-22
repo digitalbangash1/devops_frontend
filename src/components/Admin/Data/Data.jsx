@@ -4,17 +4,10 @@ import {
     UilClipboardAlt,
     UilUsersAlt,
     UilPackage,
-    UilChart,
-    UilSignOutAlt,
+
 } from "@iconscout/react-unicons"
 
-// Analytics Cards imports
-import { UilUsdSquare, UilMoneyWithdrawal } from "@iconscout/react-unicons";
 
-//Recent Card Imports
-import img1 from "../../Imgs/img1.png";
-import img2 from "../../Imgs/img2.png";
-import img3 from "../../Imgs/img3.png";
 
 
 
