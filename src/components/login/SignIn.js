@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import './SignUp.scss'
-import TextField from '@material-ui/core/TextField';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Button from '@material-ui/core/Button';
+import TextField from '@mui/material/TextField';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import { createBrowserHistory } from 'history';
 import AuthServices from '../../api/AuthServices';
