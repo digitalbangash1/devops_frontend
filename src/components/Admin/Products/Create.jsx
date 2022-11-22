@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form } from 'semantic-ui-react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './Styleform.css';
 
 
 
@@ -14,7 +15,7 @@ export default function Create() {
     const [imagelink, setImageLink] = useState('');
 
     const navigate = useNavigate();
-    
+
     const postData = () => {
         axios.post(`https://backend-webshop.admin.samat.diplomportal.dk/Products`, {
             name,
@@ -29,29 +30,24 @@ export default function Create() {
     }
     return (
         <div>
-            <Form className="create-form">
+            <Form id="productform">
                 <Form.Field>
-                    <label>Name</label>
-                    <input placeholder='Enter Name' onChange={(e) => setName(e.target.value)}/>
+                    <input placeholder='Enter Product Name...' onChange={(e) => setName(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <label>Description</label>
-                    <input placeholder='Write Description' onChange={(e) => setDescription(e.target.value)}/>
+                    <input placeholder='Enter Price...' onChange={(e) => setPrice(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <label>Price</label>
-                    <input placeholder='Enter Price' onChange={(e) => setPrice(e.target.value)}/>
+                    <input placeholder='Enter Amount...' onChange={(e) => setQuantity(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <label>Quantity</label>
-                    <input placeholder='Enter Amount' onChange={(e) => setQuantity(e.target.value)}/>
+                    <input placeholder='Enter Url here...' onChange={(e) => setImageLink(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <label>Image Link</label>
-                    <input placeholder='Enter Url here' onChange={(e) => setImageLink(e.target.value)}/>
+                    <textarea id="description" placeholder='Write Description...'onChange={(e) => setDescription(e.target.value)}/>
                 </Form.Field>
                 <Button onClick={postData} type='submit'>Add New Product</Button>
             </Form>
         </div>
-    )
+    )   
 }

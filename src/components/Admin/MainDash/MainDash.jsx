@@ -1,14 +1,16 @@
 import React from 'react'
 import './MainDash.css'
-import Cards from '../Cards/Cards'
-import Table from '../Table/Table'
+import Create from '../Products/Create'
+import Read from '../Products/Read'
+import Update from '../Products/Update'
 
 const MainDash = () => {
   return (
     <div className="MainDash">
         <h1>Dashboard</h1>
-        <Cards />
-        <Table />
+        <Create/>
+        <Read/>
+        
     </div>
   )
 }
