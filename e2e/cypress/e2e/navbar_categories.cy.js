@@ -1,4 +1,3 @@
-
 describe("Routes", () => {
     before(() => {
         cy.visit("/");
