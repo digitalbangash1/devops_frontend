@@ -1,4 +1,4 @@
-import { useState , useEffect} from "react";
+import { useState} from "react";
 import { loadStripe } from "@stripe/stripe-js";
 
 import CardIcon from "../../images/credit-card.svg";

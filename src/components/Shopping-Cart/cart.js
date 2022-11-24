@@ -1,7 +1,6 @@
  import React, { useState, useEffect } from "react";
 import "./cart.css";
 import { Link } from "react-router-dom";
-import { Button } from "semantic-ui-react";
 /*
 function saveItems() {
     var cart = JSON.parse(localStorage.getItem('cart'));   
