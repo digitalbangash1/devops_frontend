@@ -11,9 +11,9 @@ import Feedback from "./components/Feedback/Feedback";
 import Navbar from './components/shared_view/Navbar';
 import Footer from './components/shared_view/Footer';
 import JdShoes from "./components/Shopping-Cart/JdShoes";
-import Read from './components/Admin/Products/Read';
-import Create from './components/Admin/Products/Create';
-import Update from './components/Admin/Products/Update';
+import Read from './Pages/Admin/components/Products/ProductList/index';
+import Create from './Pages/Admin/components/Products/CreateProduct/CreateProduct';
+import Update from './Pages/Admin/components/Products/UpdateProducts/Update';
 import Cart from "./components/Shopping-Cart/cart"
 import { useState, useEffect } from 'react';
 import Checkout from "./Pages/checkout/Checkout";
@@ -24,12 +24,12 @@ import ProductDetails from "./components/products/ProductDetails";
 
 function App() {
 
-// shopping cart relevant
+  // shopping cart relevant
   const [cart, setCart] = useState([]);
   const [warning, setwarning] = useState(false);
   const [add, setadd] = useState(false);
 
-    // click at the product and check if is alrady addet to cart
+  // click at the product and check if is alrady addet to cart
   const handleClick = (item) => {
     console.log('App.js handle click ...');
     let isPresent = false;
@@ -51,7 +51,7 @@ function App() {
     }, 2000);
 
     // set the new product 
-    setCart([...cart, {product: item, amount: 1}]);
+    setCart([...cart, { product: item, amount: 1 }]);
     console.log(item)
   };
   // get our item into sessionStorage 
@@ -62,7 +62,7 @@ function App() {
   const handleChange = (item, d) => {
     console.log('cllll', item, d);
     const ind = cart.findIndex(x => x.product.id === item.product.id);
-    console.log( "here is ind ", ind)
+    console.log("here is ind ", ind)
     const arr = cart;
     arr[ind].amount += d;
 
@@ -74,13 +74,13 @@ function App() {
   useEffect(() => {
     console.log("this is array using cart", cart);
     sessionStorage.setItem('cart', JSON.stringify(cart));
-    
+
   }, [cart]);
   // shopping cart relevant
-  if(cart === null){ 
+  if (cart === null) {
     console.log("there are no elemant in array")
     window.location.reload(false);
-}
+  }
 
   return (
     <div className="App">
@@ -100,13 +100,14 @@ function App() {
         <Route path="/login/signin" element={<SignIn />} />
         <Route path="/shoes" element={<Shoes />} />
         <Route path="/jeans" element={<Jeans />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/admin/read" element={<Read />} />
-        <Route path="/admin/create" element={<Create />} />
-        <Route path="/admin/update/:id" element={<Update />} />
+        <Route path="/admin" element={<Admin />}>
+          <Route path="read" element={<Read />} />
+          <Route path="create" element={<Create />} />
+          <Route path="update/:id" element={<Update />} />
+        </Route>
         <Route path="/Feedback" element={<Feedback />} />
         <Route path="/jdshoes" element={<JdShoes handleClick={handleClick} />} />
-        <Route path="/jdshoes/:id" element={<ProductDetails/>}/>
+        <Route path="/jdshoes/:id" element={<ProductDetails />} />
         <Route path="/shoppingCart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange} size={cart.length} />} />
         <Route path="/checkout" element={<Checkout cart={cart} />} />
         <Route path="/success" element={<Success />} />
