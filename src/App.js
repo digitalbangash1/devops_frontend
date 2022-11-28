@@ -20,21 +20,9 @@ import Checkout from "./Pages/checkout/Checkout";
 import Success from "./Pages/checkout/Success";
 import Cancel from "./Pages/checkout/Cancel";
 import ProductDetails from "./components/products/ProductDetails";
-//import {getPersons} from "./api/personApi";
+
 
 function App() {
-  // api test persons
-/*
-const [persons, setPersons] = useState([]);
-useEffect(() => {
-  const promise = getPersons();
-  promise.then(response => {
-      const persons = response.data;
-      setPersons(persons);
-      console.log("peeee",persons)
-  });
-}, []);*/
-
 
 // shopping cart relevant
   const [cart, setCart] = useState([]);
@@ -97,9 +85,10 @@ useEffect(() => {
   return (
     <div className="App">
 
-      <Navbar size={cart.length} />
+      <Navbar size={cart?.length} />
+
       {
-        warning && <div className='warning'> Item is already addet to your cart </div>
+        warning && <div className='warning'> Item is already added to your cart </div>
       }
       {
         add && <div className='add'> You add an item to your cart </div>
