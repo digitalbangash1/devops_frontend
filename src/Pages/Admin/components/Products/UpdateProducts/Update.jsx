@@ -19,7 +19,7 @@ export default function Update() {
         setDescription(localStorage.getItem('Description'));
         setPrice(localStorage.getItem('Price'));
         setQuantity(localStorage.getItem('Quantity'));
-        setImageLink(localStorage.getItem('imagelink'));
+        setImageLink(localStorage.getItem('ImageLink'));
     }, []);
 
     const updateAPIData = () => {
@@ -50,7 +50,7 @@ export default function Update() {
                     <input placeholder='Quantity' value={quantity} onChange={(e) => setQuantity(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <input placeholder='Imagelink' value={imagelink} onChange={(e) => setImageLink(e.target.value)}/>
+                    <input placeholder='ImageLink' value={imagelink} onChange={(e) => setImageLink(e.target.value)}/>
                 </Form.Field>
                 <Button type='submit' onClick={updateAPIData}>Update</Button>
             </Form>
