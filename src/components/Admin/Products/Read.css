@@ -1,0 +1,36 @@
+table{
+	border-collapse: collapse;
+	border: 1px solid black;
+	text-align: left;
+}
+
+table td, table th{
+	border: 1px solid black;
+	padding: 20px;
+}
+
+table tbody{
+	font-size: 13px;
+	max-height: 5em;
+}
+
+
+table tr:nth-child(even){
+	background: #f4f7fa;
+}
+
+#read-btn{
+    background-image: linear-gradient(to right, #ff416c, #ff4b2b);
+    font-size: 1rem;
+    box-shadow: 0 5px 20px #89caff94;
+    transition: box-shadow .3s ease-in-out;
+}
+
+button:hover {
+	box-shadow: none;
+}
+
+#table{
+	margin-top: 70px;
+	margin-bottom: 20px;
+}

@@ -1,10 +1,8 @@
 // Sidebar imports
 import {
-    UilEstate,
     UilClipboardAlt,
     UilUsersAlt,
     UilPackage,
-
 } from "@iconscout/react-unicons"
 
 
@@ -14,8 +12,9 @@ import {
 //Sidebar Data
 export const SidebarData = [
     {
-        icon: UilEstate,
-        heading: 'Dashboard',
+    icon: UilPackage,
+    heading: 'Products',
+    url: '/admin/create',
     },
     {
         icon: UilClipboardAlt,
@@ -25,9 +24,5 @@ export const SidebarData = [
         icon: UilUsersAlt,
         heading: 'Customers',
     },
-    {
-        icon: UilPackage,
-        heading: 'Products',
-        url: '/admin/create',
-    },
+
 ];

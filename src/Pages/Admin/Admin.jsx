@@ -8,7 +8,7 @@ function Admin (){
     return(
         <div className="Dashboard">
             <div className="DashboardGlass">
-                <Sidebar />
+                <Sidebar/>
                 <MainDash />
             </div>
         </div>

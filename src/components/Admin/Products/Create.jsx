@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form } from 'semantic-ui-react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './Styleform.css';
+import './Create.css';
 
 
 
@@ -30,7 +30,7 @@ export default function Create() {
     }
     return (
         <div>
-            <Form id="productform">
+            <Form>
                 <Form.Field>
                     <input placeholder='Enter Product Name...' onChange={(e) => setName(e.target.value)}/>
                 </Form.Field>
@@ -46,7 +46,7 @@ export default function Create() {
                 <Form.Field>
                     <textarea id="description" placeholder='Write Description...'onChange={(e) => setDescription(e.target.value)}/>
                 </Form.Field>
-                <Button onClick={postData} type='submit'>Add New Product</Button>
+                <Button id="create-btn" onClick={postData} type='submit'>Add New Product</Button>
             </Form>
         </div>
     )   
