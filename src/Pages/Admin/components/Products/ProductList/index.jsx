@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Table, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import './index.css';
 
 export default function Read() {
     const [APIData, setAPIData] = useState([]);
@@ -37,7 +38,7 @@ export default function Read() {
         })
     }
     return (
-        <div>
+        <div id="table">
             <Table singleLine>
                 <Table.Header>
                     <Table.Row>
@@ -54,19 +55,19 @@ export default function Read() {
                 <Table.Body>
                     {APIData.map((data) => {
                         return (
-                            <Table.Row>
+                            <Table.Row id="return-data">
                                 <Table.Cell>{data.name}</Table.Cell>
                                 <Table.Cell>{data.description}</Table.Cell>
                                 <Table.Cell>{data.price}</Table.Cell>
                                 <Table.Cell>{data.quantity}</Table.Cell>
                                 <Table.Cell>{data.imagelink}</Table.Cell>
-                                <Link to='/admin/update/:id'>
                                     <Table.Cell> 
-                                        <Button onClick={() => setData(data)}>Update</Button>
+                                    <Link to='/admin/update/:id'>
+                                        <Button id="read-btn" onClick={() => setData(data)}>Update</Button>
+                                    </Link>
                                     </Table.Cell>
-                                </Link>
                                 <Table.Cell>
-                                    <Button onClick={() => onDelete(data.id)}>Delete</Button>
+                                    <Button id="read-btn" onClick={() => onDelete(data.id)}>Delete</Button>
                                 </Table.Cell>
                             </Table.Row>
                         )

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form } from 'semantic-ui-react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './CreateProduct.css';
 
 
 
@@ -14,6 +15,7 @@ export default function Create() {
     const [imagelink, setImageLink] = useState('');
 
     const navigate = useNavigate();
+
     const postData = () => {
         axios.post(`https://backend-webshop.admin.samat.diplomportal.dk/Products`, {
             name,
@@ -21,35 +23,31 @@ export default function Create() {
             price,
             quantity,
             imagelink
-        }).then(() =>{
+        }) 
+        .then(() =>{
             navigate('/admin/read');
         });
     }
     return (
         <div>
-            <Form className="create-form">
+            <Form>
                 <Form.Field>
-                    <label>Name</label>
-                    <input placeholder='name' onChange={(e) => setName(e.target.value)}/>
+                    <input placeholder='Enter Product Name...' onChange={(e) => setName(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <label>Description</label>
-                    <input placeholder='description' onChange={(e) => setDescription(e.target.value)}/>
+                    <input placeholder='Enter Price...' onChange={(e) => setPrice(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <label>Price</label>
-                    <input placeholder='price' onChange={(e) => setPrice(e.target.value)}/>
+                    <input placeholder='Enter Amount...' onChange={(e) => setQuantity(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <label>Quantity</label>
-                    <input placeholder='quantity' onChange={(e) => setQuantity(e.target.value)}/>
+                    <input placeholder='Enter Url here...' onChange={(e) => setImageLink(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <label>Name</label>
-                    <input placeholder='imagelink' onChange={(e) => setImageLink(e.target.value)}/>
+                    <textarea id="description" placeholder='Write Description...'onChange={(e) => setDescription(e.target.value)}/>
                 </Form.Field>
-                <Button onClick={postData} type='submit'>Submit</Button>
+                <Button id="create-btn" onClick={postData} type='submit'>Add New Product</Button>
             </Form>
         </div>
-    )
+    )   
 }

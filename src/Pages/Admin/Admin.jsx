@@ -1,17 +1,18 @@
 import './Admin.css';
 import React from 'react';
-import Sidebar from '../../components/Admin/Sidebar/Sidebar';
-import MainDash from '../../components/Admin/MainDash/MainDash';
-import RightSide from '../../components/Admin/RightSide/Rightside';
+import { Link, Outlet } from 'react-router-dom';
+
+
 
 function Admin (){
     return(
-        <div className="Dashboard">
-            <div className="DashboardGlass">
-                <Sidebar />
-                <MainDash />
-                <RightSide />
+        <div className="products">
+            <div className="productsNav">
+                <Link to="/admin/create">Create New Product</Link>
+                <Link to="/admin/read">Product List</Link>
             </div>
+
+            <Outlet />
         </div>
     )
     }

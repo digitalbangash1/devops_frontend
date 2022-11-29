@@ -1,0 +1,23 @@
+table{
+	border-collapse: collapse;
+	border: 1px solid black;
+	text-align: left;
+}
+
+table td, table th{
+	border: 1px solid black;
+}
+
+table tbody{
+	font-size: 13px;
+	max-height: 5em;
+}
+
+
+table tr:nth-child(even){
+	background: #f4f7fa;
+}
+
+#table{
+	margin: 20px;
+}
