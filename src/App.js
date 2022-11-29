@@ -31,7 +31,7 @@ function App() {
 
     // click at the product and check if is alrady addet to cart
   const handleClick = (item) => {
-    console.log('App.js handle click ...');
+    //console.log('App.js handle click ...');
     let isPresent = false;
     cart.forEach((p) => {
       if (item.id === p.product.id)
@@ -52,7 +52,7 @@ function App() {
 
     // set the new product 
     setCart([...cart, {product: item, amount: 1}]);
-    console.log(item)
+    //console.log(item)
   };
   // get our item into sessionStorage 
   useEffect(() => {
@@ -60,9 +60,9 @@ function App() {
   }, []);
 
   const handleChange = (item, d) => {
-    console.log('cllll', item, d);
+    //console.log('cllll', item, d);
     const ind = cart.findIndex(x => x.product.id === item.product.id);
-    console.log( "here is ind ", ind)
+    //console.log( "here is ind ", ind)
     const arr = cart;
     arr[ind].amount += d;
 
@@ -78,7 +78,7 @@ function App() {
   }, [cart]);
   // shopping cart relevant
   if(cart === null){ 
-    console.log("there are no elemant in array")
+    //console.log("there are no elemant in array")
     window.location.reload(false);
 }
 
@@ -120,7 +120,7 @@ function App() {
     </div>
   );
 }
-console.log("App.js");
+//console.log("App.js");
 
 
 

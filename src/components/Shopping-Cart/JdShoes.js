@@ -13,7 +13,7 @@ const JdShoes = ({ handleClick }) => {
         promise.then(response => {
             const products = response.data;
             setProducts(products);
-            console.log(products);
+            //console.log(products);
         });
 
     }, []);

@@ -1,7 +1,7 @@
 
 .navbar .navbar-nav .nav-link {
     color: #282c34;
-    font-size: 1.1em;
+    font-size: 1.4em;
 }
 .navbar .navbar-nav .nav-link:hover {
     background-color: #463be2;
@@ -18,7 +18,7 @@
 }
 
 .cart span:nth-child(1) {
- font-size : 2rem ;
+ font-size : 3rem ;
  color : rgb(0, 0, 0) ;
 }
 .cart span:nth-child(2) {

@@ -23,7 +23,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
 
 
     const handlePrice = () => {
-        console.log('cart', cart);
+        //console.log('cart', cart);
         let ans = 0;
         cart.map((item) => (ans += item.amount * item.product.price));
         setPrice(ans);
@@ -40,7 +40,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
     useEffect(() => {
         handlePrice();
         sessionStorage.setItem('myprice', JSON.stringify(price))
-        console.log(" this is the fainal price", price)
+        //console.log(" this is the fainal price", price)
        // handleItemPrice();
     });
     
