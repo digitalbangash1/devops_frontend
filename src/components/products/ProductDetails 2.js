@@ -16,11 +16,24 @@ export default function ProductDetails() {
 
     return (
         <div>
+        <div>
             <h1>Product Details</h1>
             <h2>{product.name}</h2>
             <p>{product.description}</p>
             <p>{product.price}</p>
             <img src={product.imageLink} alt=""/>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
         </div>
     )
 

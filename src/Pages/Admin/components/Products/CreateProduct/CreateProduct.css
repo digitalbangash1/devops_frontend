@@ -11,8 +11,7 @@ input{
     font-size: 1rem;
 }
 
-input,
-button {
+input{
   width: 100%;
   padding: 14px;
   border-radius: 3px;
