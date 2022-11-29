@@ -6,7 +6,7 @@
     align-items: center;
     padding-top: 60px;
     overflow: scroll;   
-  } 
+} 
 
 @media screen and (max-width: 1200px) {
     .products {
