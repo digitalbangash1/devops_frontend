@@ -5,9 +5,7 @@ import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
 import axios from 'axios';
 import { Table } from 'semantic-ui-react';
-import { Reviews } from "@mui/icons-material";
 import { useNavigate } from 'react-router-dom';
-import { Button, Form } from 'semantic-ui-react'
 
 function Feedback() {
   const [value, setValue] = React.useState(2);
