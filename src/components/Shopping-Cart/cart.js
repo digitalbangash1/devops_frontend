@@ -43,8 +43,6 @@ const Cart = ({ cart, setCart, handleChange }) => {
         //console.log(" this is the fainal price", price)
        // handleItemPrice();
     });
-    
-   
     return (
         <article>
             {cart.map((item) => (
