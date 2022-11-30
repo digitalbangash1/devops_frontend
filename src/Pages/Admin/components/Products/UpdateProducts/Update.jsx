@@ -9,7 +9,7 @@ export default function Update() {
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
     const [quantity, setQuantity] = useState('');
-    const [imagelink, setImageLink] = useState('');
+    const [imagelink, setimageLink] = useState('');
 
     const navigate = useNavigate();
 
@@ -19,7 +19,7 @@ export default function Update() {
         setDescription(localStorage.getItem('Description'));
         setPrice(localStorage.getItem('Price'));
         setQuantity(localStorage.getItem('Quantity'));
-        setImageLink(localStorage.getItem('ImageLink'));
+        setimageLink(localStorage.getItem('imageLink'));
     }, []);
 
     const updateAPIData = () => {
@@ -50,7 +50,7 @@ export default function Update() {
                     <input placeholder='Quantity' value={quantity} onChange={(e) => setQuantity(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <input placeholder='ImageLink' value={imagelink} onChange={(e) => setImageLink(e.target.value)}/>
+                    <input placeholder='imageLink' value={imagelink} onChange={(e) => setimageLink(e.target.value)}/>
                 </Form.Field>
                 <Button type='submit' onClick={updateAPIData}>Update</Button>
             </Form>

@@ -9,7 +9,6 @@ export default function Read() {
     useEffect(() => {
         axios.get(`https://backend-webshop.admin.samat.diplomportal.dk/Products`)
             .then((response) => {
-                console.log(response.data)
                 setAPIData(response.data);
             })
     }, []);
@@ -38,7 +37,7 @@ export default function Read() {
         })
     }
     return (
-        <div id="table">
+        <div id="Productlist_table">
             <Table singleLine>
                 <Table.Header>
                     <Table.Row>

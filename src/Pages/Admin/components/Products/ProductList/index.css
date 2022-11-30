@@ -1,23 +1,23 @@
-table{
+#Productlist_table{
 	border-collapse: collapse;
 	border: 1px solid black;
 	text-align: left;
 }
 
-table td, table th{
+#Productlist_table td, table th{
 	border: 1px solid black;
 }
 
-table tbody{
+#Productlist_table tbody{
 	font-size: 13px;
 	max-height: 5em;
 }
 
 
-table tr:nth-child(even){
+#Productlist_table tr:nth-child(even){
 	background: #f4f7fa;
 }
 
-#table{
+#Productlist_table{
 	margin: 20px;
 }
