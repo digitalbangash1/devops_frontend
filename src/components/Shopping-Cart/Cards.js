@@ -24,7 +24,7 @@ const Cards = ({item, handleClick}) => {
 
                 <p>{description}</p>
                 <motion.p whileHover={{scale: 1.8, rotate: 0}}>Price: {price},00 kr</motion.p>
-                <Link className="feedback" to="/Feedback">Feedback </Link>
+                <Link className="feedback" to={`/jdshoes/${item.id}`}>Feedback </Link>
                 <motion.button whileTap={{
                     scale: 1.5,
                     borderRadius: "50%"

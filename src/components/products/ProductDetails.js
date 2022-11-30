@@ -44,7 +44,7 @@ export default function ProductDetails() {
             rating,
             product_id,
         }).then(() => {
-            navigate('/feedback');
+          window.location.reload(false);
         });
     }
 
@@ -121,7 +121,7 @@ export default function ProductDetails() {
                                                          onChange={(e) => setReview(e.target.value)}/>
                                             <div className="d-flex justify-content-between mt-3">
                                                 <MDBBtn color="danger" onClick={postData}> Send <MDBIcon fas
-                                                                                                         icon="long-arrow-alt-right ms-1"/>
+                                                                                                          icon="long-arrow-alt-right ms-1"/>
                                                 </MDBBtn>
                                             </div>
                                         </div>
