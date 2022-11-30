@@ -24,3 +24,13 @@ export function getProduct(id) {
     const response = axiosInstance.get(`/products/${id}`);
     return response;
 }
+
+export function  getFeedback(){
+    const response = axiosInstance.get(`/feedback`);
+    return response;
+}
+
+export function createFeedback(feedback){
+    const response = axiosInstance.post(`/feedback`, feedback);
+    return response;
+}
