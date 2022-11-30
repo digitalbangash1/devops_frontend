@@ -72,7 +72,7 @@ function App() {
 
   // set items in sessionStorage 
   useEffect(() => {
-    console.log("this is array using cart", cart);
+    //console.log("this is array using cart", cart);
     sessionStorage.setItem('cart', JSON.stringify(cart));
 
   }, [cart]);
