@@ -9,7 +9,7 @@ function Videoo(){
     <div className="overlay"></div>
         <video src={startVideo} autoPlay loop muted/>
             <div className="content">
-                <h1>Welcome</h1>
+                <h1>Welcome DevOps Exam</h1>
                 <p>SAMAT store</p>
             </div>
 </div>
